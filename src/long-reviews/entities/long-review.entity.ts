@@ -1,17 +1,15 @@
-import { Profile } from 'src/profiles/entities/profile.entity';
 import {
   BaseEntity,
   Column,
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
-  ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 
 @Entity()
-export class Genre extends BaseEntity {
+export class LongReview extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -25,8 +23,17 @@ export class Genre extends BaseEntity {
   deletedAt?: Date;
 
   @Column()
-  name: string;
+  user_id: number;
 
-  @ManyToOne(() => Profile, (profile) => profile.genres)
-  user: Profile;
+  @Column()
+  novel_id: number;
+
+  @Column()
+  star: number;
+
+  @Column()
+  good_content: string;
+
+  @Column()
+  bad_content: string;
 }

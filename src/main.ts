@@ -10,9 +10,9 @@ async function bootstrap() {
 
   // Swagger Setting
   const config = new DocumentBuilder()
-    .setTitle('kumap Docs')
-    .setDescription('The kumap2.0 API description')
-    .setVersion('2.0')
+    .setTitle('Novelier Docs')
+    .setDescription('Novelier 0.1 API description')
+    .setVersion('0.1')
     .addBearerAuth()
     .build();
   const document = SwaggerModule.createDocument(app, config);

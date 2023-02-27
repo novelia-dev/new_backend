@@ -15,6 +15,8 @@ import { Tag } from './tags/entities/tag.entity';
 import { User } from './users/entities/user.entity';
 import { ProfilesModule } from './profiles/profiles.module';
 import { Profile } from './profiles/entities/profile.entity';
+import { LongReviewsModule } from './long-reviews/long-reviews.module';
+import { ShortReviewsModule } from './short-reviews/short-reviews.module';
 
 @Module({
   imports: [
@@ -37,6 +39,8 @@ import { Profile } from './profiles/entities/profile.entity';
     GenresModule,
     QuizsModule,
     ProfilesModule,
+    LongReviewsModule,
+    ShortReviewsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
