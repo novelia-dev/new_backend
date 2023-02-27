@@ -1,19 +1,25 @@
 import { Injectable } from '@nestjs/common';
 import { CreateNovelDto } from './dto/create-novel.dto';
 import { UpdateNovelDto } from './dto/update-novel.dto';
+import { Novel } from './entities/novel.entity';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class NovelsService {
-  create(createNovelDto: CreateNovelDto) {
-    return 'This action adds a new novel';
+  constructor(
+    @InjectRepository(Novel) private novelsRepository: Repository<Novel>,
+  ) {}
+  async create(createNovelDto: CreateNovelDto): Promise<any> {
+    return this.novelsRepository.save(createNovelDto);
   }
 
-  findAll() {
-    return `This action returns all novels`;
+  async findAll(): Promise<Novel[]> {
+    return this.novelsRepository.find();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} novel`;
+    return this.novelsRepository.find({ where: { id: id } });
   }
 
   update(id: number, updateNovelDto: UpdateNovelDto) {
@@ -21,6 +27,6 @@ export class NovelsService {
   }
 
   remove(id: number) {
-    return `This action removes a #${id} novel`;
+    return this.novelsRepository.delete(id);
   }
 }

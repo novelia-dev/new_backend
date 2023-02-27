@@ -8,6 +8,13 @@ import { TagsModule } from './tags/tags.module';
 import { GenresModule } from './genres/genres.module';
 import { QuizsModule } from './quizs/quizs.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Genre } from './genres/entities/genre.entity';
+import { Novel } from './novels/entities/novel.entity';
+import { Quiz } from './quizs/entities/quiz.entity';
+import { Tag } from './tags/entities/tag.entity';
+import { User } from './users/entities/user.entity';
+import { ProfilesModule } from './profiles/profiles.module';
+import { Profile } from './profiles/entities/profile.entity';
 
 @Module({
   imports: [
@@ -16,12 +23,12 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     }),
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: process.env.LIGHTSAIL_DB_ENDPOINT,
+      host: process.env.MYSQL_HOST,
       port: 3306,
-      username: process.env.LIGHTSAIL_DB_USERNAME,
-      password: process.env.LIGHTSAIL_DB_PASSWORD,
-      database: process.env.LIGHTSAIL_DB_NAME,
-      entities: [],
+      username: process.env.MYSQL_USERNAME,
+      password: process.env.MYSQL_PASSWORD,
+      database: process.env.MYSQL_DBNAME,
+      entities: [Genre, Novel, Quiz, Tag, User, Profile],
       synchronize: true,
     }),
     NovelsModule,
@@ -29,6 +36,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     TagsModule,
     GenresModule,
     QuizsModule,
+    ProfilesModule,
   ],
   controllers: [AppController],
   providers: [AppService],

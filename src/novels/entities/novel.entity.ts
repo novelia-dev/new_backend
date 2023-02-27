@@ -1,15 +1,21 @@
-export class Novel {}
+import { Profile } from 'src/profiles/entities/profile.entity';
+import { Quiz } from 'src/quizs/entities/quiz.entity';
+import { Tag } from 'src/tags/entities/tag.entity';
 import {
+  BaseEntity,
   Column,
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
+  ManyToMany,
+  ManyToOne,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 
 @Entity()
-export class Comment {
+export class Novel extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -22,13 +28,13 @@ export class Comment {
   @Column()
   content: string;
 
-  @Column()
-  start_date: string;
+  @Column({ type: 'timestamp' })
+  start_date: Date;
 
-  @Column()
+  @Column({ default: 0 })
   short_done: number;
 
-  @Column()
+  @Column({ default: 0 })
   multiple_done: number;
 
   @CreateDateColumn({ type: 'timestamp' })
@@ -39,4 +45,16 @@ export class Comment {
 
   @DeleteDateColumn({ type: 'timestamp' })
   deletedAt?: Date;
+
+  @OneToMany(() => Quiz, (quiz) => quiz.novel, { eager: true })
+  quizs: Quiz[];
+
+  @OneToMany(() => Tag, (tag) => tag.novel, { eager: true })
+  tags: Tag[];
+
+  @ManyToOne(() => Profile, (profile) => profile.myNovels)
+  authorProfile: Profile;
+
+  @ManyToMany(() => Profile, (profile) => profile.scraps)
+  scrappedUsers: Profile[];
 }
