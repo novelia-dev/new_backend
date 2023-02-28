@@ -10,14 +10,14 @@ import {
 import { LongReviewsService } from './long-reviews.service';
 import { CreateLongReviewDto } from './dto/create-long-review.dto';
 import { UpdateLongReviewDto } from './dto/update-long-review.dto';
-import { ApiProperty, ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 
 @ApiTags('long-reviews')
 @Controller('long-reviews')
 export class LongReviewsController {
   constructor(private readonly longReviewsService: LongReviewsService) {}
 
-  @ApiProperty({
+  @ApiOperation({
     deprecated: true,
   })
   @Post()
@@ -25,7 +25,7 @@ export class LongReviewsController {
     return this.longReviewsService.create(createLongReviewDto);
   }
 
-  @ApiProperty({
+  @ApiOperation({
     deprecated: true,
   })
   @Get()
@@ -33,7 +33,7 @@ export class LongReviewsController {
     return this.longReviewsService.findAll();
   }
 
-  @ApiProperty({
+  @ApiOperation({
     deprecated: true,
   })
   @Get(':id')
@@ -41,7 +41,7 @@ export class LongReviewsController {
     return this.longReviewsService.findOne(+id);
   }
 
-  @ApiProperty({
+  @ApiOperation({
     deprecated: true,
   })
   @Patch(':id')
@@ -52,7 +52,7 @@ export class LongReviewsController {
     return this.longReviewsService.update(+id, updateLongReviewDto);
   }
 
-  @ApiProperty({
+  @ApiOperation({
     deprecated: true,
   })
   @Delete(':id')

@@ -10,14 +10,14 @@ import {
 import { ShortReviewsService } from './short-reviews.service';
 import { CreateShortReviewDto } from './dto/create-short-review.dto';
 import { UpdateShortReviewDto } from './dto/update-short-review.dto';
-import { ApiProperty, ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 
 @ApiTags('short-reviews')
 @Controller('short-reviews')
 export class ShortReviewsController {
   constructor(private readonly shortReviewsService: ShortReviewsService) {}
 
-  @ApiProperty({
+  @ApiOperation({
     deprecated: true,
   })
   @Post()
@@ -25,7 +25,7 @@ export class ShortReviewsController {
     return this.shortReviewsService.create(createShortReviewDto);
   }
 
-  @ApiProperty({
+  @ApiOperation({
     deprecated: true,
   })
   @Get()
@@ -33,7 +33,7 @@ export class ShortReviewsController {
     return this.shortReviewsService.findAll();
   }
 
-  @ApiProperty({
+  @ApiOperation({
     deprecated: true,
   })
   @Get(':id')
@@ -41,7 +41,7 @@ export class ShortReviewsController {
     return this.shortReviewsService.findOne(+id);
   }
 
-  @ApiProperty({
+  @ApiOperation({
     deprecated: true,
   })
   @Patch(':id')
@@ -52,7 +52,7 @@ export class ShortReviewsController {
     return this.shortReviewsService.update(+id, updateShortReviewDto);
   }
 
-  @ApiProperty({
+  @ApiOperation({
     deprecated: true,
   })
   @Delete(':id')

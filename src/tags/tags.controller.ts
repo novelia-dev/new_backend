@@ -10,14 +10,14 @@ import {
 import { TagsService } from './tags.service';
 import { CreateTagDto } from './dto/create-tag.dto';
 import { UpdateTagDto } from './dto/update-tag.dto';
-import { ApiProperty, ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 
 @ApiTags('tags')
 @Controller('tags')
 export class TagsController {
   constructor(private readonly tagsService: TagsService) {}
 
-  @ApiProperty({
+  @ApiOperation({
     deprecated: true,
   })
   @Post()
@@ -25,7 +25,7 @@ export class TagsController {
     return this.tagsService.create(createTagDto);
   }
 
-  @ApiProperty({
+  @ApiOperation({
     deprecated: true,
   })
   @Get()
@@ -33,7 +33,7 @@ export class TagsController {
     return this.tagsService.findAll();
   }
 
-  @ApiProperty({
+  @ApiOperation({
     deprecated: true,
   })
   @Get(':id')
@@ -41,7 +41,7 @@ export class TagsController {
     return this.tagsService.findOne(+id);
   }
 
-  @ApiProperty({
+  @ApiOperation({
     deprecated: true,
   })
   @Patch(':id')
@@ -49,7 +49,7 @@ export class TagsController {
     return this.tagsService.update(+id, updateTagDto);
   }
 
-  @ApiProperty({
+  @ApiOperation({
     deprecated: true,
   })
   @Delete(':id')

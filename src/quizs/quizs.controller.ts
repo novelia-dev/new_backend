@@ -10,14 +10,14 @@ import {
 import { QuizsService } from './quizs.service';
 import { CreateQuizDto } from './dto/create-quiz.dto';
 import { UpdateQuizDto } from './dto/update-quiz.dto';
-import { ApiProperty, ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 
 @ApiTags('quizs')
 @Controller('quizs')
 export class QuizsController {
   constructor(private readonly quizsService: QuizsService) {}
 
-  @ApiProperty({
+  @ApiOperation({
     deprecated: true,
   })
   @Post()
@@ -25,7 +25,7 @@ export class QuizsController {
     return this.quizsService.create(createQuizDto);
   }
 
-  @ApiProperty({
+  @ApiOperation({
     deprecated: true,
   })
   @Get()
@@ -33,7 +33,7 @@ export class QuizsController {
     return this.quizsService.findAll();
   }
 
-  @ApiProperty({
+  @ApiOperation({
     deprecated: true,
   })
   @Get(':id')
@@ -41,7 +41,7 @@ export class QuizsController {
     return this.quizsService.findOne(+id);
   }
 
-  @ApiProperty({
+  @ApiOperation({
     deprecated: true,
   })
   @Patch(':id')
@@ -49,7 +49,7 @@ export class QuizsController {
     return this.quizsService.update(+id, updateQuizDto);
   }
 
-  @ApiProperty({
+  @ApiOperation({
     deprecated: true,
   })
   @Delete(':id')

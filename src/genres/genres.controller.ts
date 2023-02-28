@@ -10,14 +10,14 @@ import {
 import { GenresService } from './genres.service';
 import { CreateGenreDto } from './dto/create-genre.dto';
 import { UpdateGenreDto } from './dto/update-genre.dto';
-import { ApiProperty, ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 
 @ApiTags('genres')
 @Controller('genres')
 export class GenresController {
   constructor(private readonly genresService: GenresService) {}
 
-  @ApiProperty({
+  @ApiOperation({
     deprecated: true,
   })
   @Post()
@@ -25,7 +25,7 @@ export class GenresController {
     return this.genresService.create(createGenreDto);
   }
 
-  @ApiProperty({
+  @ApiOperation({
     deprecated: true,
   })
   @Get()
@@ -33,7 +33,7 @@ export class GenresController {
     return this.genresService.findAll();
   }
 
-  @ApiProperty({
+  @ApiOperation({
     deprecated: true,
   })
   @Get(':id')
@@ -41,7 +41,7 @@ export class GenresController {
     return this.genresService.findOne(+id);
   }
 
-  @ApiProperty({
+  @ApiOperation({
     deprecated: true,
   })
   @Patch(':id')
@@ -49,7 +49,7 @@ export class GenresController {
     return this.genresService.update(+id, updateGenreDto);
   }
 
-  @ApiProperty({
+  @ApiOperation({
     deprecated: true,
   })
   @Delete(':id')
