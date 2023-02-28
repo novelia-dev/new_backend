@@ -4,6 +4,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from './entities/user.entity';
 import { Repository } from 'typeorm';
+import { AuthService } from 'src/auth/auth.service';
 
 @Injectable()
 export class UsersService {
@@ -21,7 +22,16 @@ export class UsersService {
   }
 
   async findOne(id: number) {
-    return this.usersRepository.find({ where: { id: id } });
+    return this.usersRepository.findOne({ where: { id: id } });
+  }
+
+  async findOneByEmail(email: string): Promise<User> {
+    console.log('findOneByEmail', email);
+    const user = await this.usersRepository.findOne({
+      where: { email: email },
+    });
+    console.log(user, 'user');
+    return user;
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {

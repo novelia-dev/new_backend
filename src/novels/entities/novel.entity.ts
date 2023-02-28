@@ -55,6 +55,6 @@ export class Novel extends BaseEntity {
   @ManyToOne(() => Profile, (profile) => profile.myNovels)
   authorProfile: Profile;
 
-  @ManyToMany(() => Profile, (profile) => profile.scraps)
+  @ManyToOne(() => Profile, (profile) => profile.scraps)
   scrappedUsers: Profile[];
 }

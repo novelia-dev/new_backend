@@ -11,15 +11,31 @@ import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { AuthService } from 'src/auth/auth.service';
+import { LoginAuthDto } from 'src/auth/dto/login-auth.dto';
 
 @ApiTags('user')
 @Controller('users')
 export class UsersController {
-  constructor(private readonly usersService: UsersService) {}
+  constructor(
+    private readonly usersService: UsersService,
+    private readonly authService: AuthService,
+  ) {}
+
+  @ApiOperation({
+    description: '로그인 하기',
+    summary: '로그인',
+  })
+  @Post('login')
+  async logIn(@Body() body: LoginAuthDto) {
+    console.log('controller', body);
+    return await this.authService.jwtLogIn(body);
+  }
 
   @Post()
   create(@Body() createUserDto: CreateUserDto) {
-    return this.usersService.create(createUserDto);
+    return this.authService.jwtRegister(createUserDto);
+    // return this.usersService.create(createUserDto);
   }
 
   @Get()

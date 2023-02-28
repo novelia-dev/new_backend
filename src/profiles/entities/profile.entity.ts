@@ -27,7 +27,7 @@ export class Profile extends BaseEntity {
   updatedAt!: Date;
 
   // INPUT COLUMNS
-  @Column()
+  @Column({ unique: true })
   email: string;
 
   @Column()
@@ -42,7 +42,7 @@ export class Profile extends BaseEntity {
   @Column()
   ages: string;
 
-  @Column()
+  @Column({ default: 0 })
   points: number;
 
   //   RELATION COLUMNS
@@ -52,13 +52,13 @@ export class Profile extends BaseEntity {
   @OneToMany(() => Novel, (novel) => novel.authorProfile)
   myNovels: Novel[];
 
-  @ManyToMany(() => Tag, (tag) => tag.preferUsers, { eager: true })
+  @OneToMany(() => Tag, (tag) => tag.preferUsers, { eager: true })
   preferTags: Tag[];
 
-  @ManyToMany(() => Tag, (tag) => tag.hateUsers, { eager: true })
+  @OneToMany(() => Tag, (tag) => tag.hateUsers, { eager: true })
   hateTags: Tag[];
 
-  @ManyToMany(() => Novel, (novel) => novel.scrappedUsers, { eager: true })
+  @OneToMany(() => Novel, (novel) => novel.scrappedUsers, { eager: true })
   scraps: Novel[];
 
   @OneToMany(() => Genre, (genre) => genre.user, { eager: true })
