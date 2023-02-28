@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
@@ -17,6 +17,8 @@ import { ProfilesModule } from './profiles/profiles.module';
 import { Profile } from './profiles/entities/profile.entity';
 import { LongReviewsModule } from './long-reviews/long-reviews.module';
 import { ShortReviewsModule } from './short-reviews/short-reviews.module';
+import { LoggerMiddleware } from './common/logger/logger.middleware';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -41,8 +43,14 @@ import { ShortReviewsModule } from './short-reviews/short-reviews.module';
     ProfilesModule,
     LongReviewsModule,
     ShortReviewsModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule implements NestModule {
+  private readonly isDev: boolean = process.env.MODE === 'dev' ? true : false;
+  configure(consumer: MiddlewareConsumer) {
+    consumer.apply(LoggerMiddleware).forRoutes('*');
+  }
+}
