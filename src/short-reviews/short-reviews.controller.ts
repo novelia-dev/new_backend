@@ -1,8 +1,18 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { ShortReviewsService } from './short-reviews.service';
 import { CreateShortReviewDto } from './dto/create-short-review.dto';
 import { UpdateShortReviewDto } from './dto/update-short-review.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('short-reviews')
 @Controller('short-reviews')
 export class ShortReviewsController {
   constructor(private readonly shortReviewsService: ShortReviewsService) {}
@@ -23,7 +33,10 @@ export class ShortReviewsController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateShortReviewDto: UpdateShortReviewDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateShortReviewDto: UpdateShortReviewDto,
+  ) {
     return this.shortReviewsService.update(+id, updateShortReviewDto);
   }
 

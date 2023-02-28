@@ -1,8 +1,18 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { LongReviewsService } from './long-reviews.service';
 import { CreateLongReviewDto } from './dto/create-long-review.dto';
 import { UpdateLongReviewDto } from './dto/update-long-review.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('long-reviews')
 @Controller('long-reviews')
 export class LongReviewsController {
   constructor(private readonly longReviewsService: LongReviewsService) {}
@@ -23,7 +33,10 @@ export class LongReviewsController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateLongReviewDto: UpdateLongReviewDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateLongReviewDto: UpdateLongReviewDto,
+  ) {
     return this.longReviewsService.update(+id, updateLongReviewDto);
   }
 
