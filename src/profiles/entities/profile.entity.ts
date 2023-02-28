@@ -49,7 +49,7 @@ export class Profile extends BaseEntity {
   @OneToOne(() => User, (user) => user.profile)
   account: User;
 
-  @OneToMany(() => Novel, (novel) => novel.authorProfile)
+  @OneToMany(() => Novel, (novel) => novel.authorProfile, { eager: true })
   myNovels: Novel[];
 
   @OneToMany(() => Tag, (tag) => tag.preferUsers, { eager: true })

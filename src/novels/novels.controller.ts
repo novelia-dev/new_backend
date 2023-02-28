@@ -16,6 +16,7 @@ import { ApiCreatedResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { JwtAuthGuard } from 'src/auth/jwt/jwt.guard';
 import { User } from 'src/users/entities/user.entity';
 import { CurrentUser } from 'src/common/decorators/user.decorator';
+import { TitleContentDto } from './dto/title-content.dto';
 
 @ApiTags('novels')
 @Controller('novels')
@@ -32,9 +33,13 @@ export class NovelsController {
   })
   @UseGuards(JwtAuthGuard)
   @Post()
-  create(@CurrentUser() user: User, @Body() createNovelDto: CreateNovelDto) {
+  create(@CurrentUser() user: User, @Body() titleContentDto: TitleContentDto) {
     console.log('here is user', user);
-    return this.novelsService.create(createNovelDto);
+    const data = {
+      ...titleContentDto,
+      author: user.profile.name,
+    };
+    return this.novelsService.create(data, user.email);
   }
 
   @ApiOperation({

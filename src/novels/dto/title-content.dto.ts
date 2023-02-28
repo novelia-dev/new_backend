@@ -1,8 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsDate, IsNotEmpty, IsNumber, IsString } from 'class-validator';
-import { User } from 'src/users/entities/user.entity';
 
-export class CreateNovelDto {
+export class TitleContentDto {
   @ApiProperty({
     name: 'title',
     example: '새로운 로맨스',
@@ -11,15 +10,6 @@ export class CreateNovelDto {
   @IsNotEmpty()
   @IsString()
   title: string;
-
-  @ApiProperty({
-    name: 'author',
-    example: '모이',
-    required: true,
-  })
-  @IsNotEmpty()
-  @IsString()
-  author: string;
 
   @ApiProperty({
     name: 'content',
