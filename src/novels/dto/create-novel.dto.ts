@@ -28,31 +28,4 @@ export class CreateNovelDto {
   @IsNotEmpty()
   @IsString()
   content: string;
-
-  @ApiProperty({
-    name: '노출되기 시작하는 날짜',
-    example: '2002-08-06',
-    required: false,
-  })
-  @IsNotEmpty()
-  @IsDate()
-  start_date: Date;
-
-  @ApiProperty({
-    name: '객관식 답변 수',
-    example: '5',
-    required: false,
-  })
-  @IsNotEmpty()
-  @IsNumber()
-  short_done: number;
-
-  @ApiProperty({
-    name: '주관식 답변 수',
-    example: '5',
-    required: false,
-  })
-  @IsNotEmpty()
-  @IsNumber()
-  multiple_done: number;
 }

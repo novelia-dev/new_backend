@@ -6,11 +6,16 @@ import {
   Patch,
   Param,
   Delete,
+  UseGuards,
+  Req,
 } from '@nestjs/common';
 import { NovelsService } from './novels.service';
 import { CreateNovelDto } from './dto/create-novel.dto';
 import { UpdateNovelDto } from './dto/update-novel.dto';
 import { ApiCreatedResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
+import { JwtAuthGuard } from 'src/auth/jwt/jwt.guard';
+import { User } from 'src/users/entities/user.entity';
+import { CurrentUser } from 'src/common/decorators/user.decorator';
 
 @ApiTags('novels')
 @Controller('novels')
@@ -25,8 +30,10 @@ export class NovelsController {
     description: 'novel 생성하기',
     type: CreateNovelDto,
   })
+  @UseGuards(JwtAuthGuard)
   @Post()
-  create(@Body() createNovelDto: CreateNovelDto) {
+  create(@CurrentUser() user: User, @Body() createNovelDto: CreateNovelDto) {
+    console.log('here is user', user);
     return this.novelsService.create(createNovelDto);
   }
 

@@ -6,20 +6,37 @@ import {
   Patch,
   Param,
   Delete,
+  UseGuards,
 } from '@nestjs/common';
 import { ProfilesService } from './profiles.service';
 import { CreateProfileDto } from './dto/create-profile.dto';
 import { UpdateProfileDto } from './dto/update-profile.dto';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiTags, ApiOperation } from '@nestjs/swagger';
+import { JwtAuthGuard } from 'src/auth/jwt/jwt.guard';
+import { CurrentUser } from 'src/common/decorators/user.decorator';
+import { User } from 'src/users/entities/user.entity';
 
 @ApiTags('profiles')
 @Controller('profiles')
 export class ProfilesController {
   constructor(private readonly profilesService: ProfilesService) {}
 
+  @ApiOperation({
+    summary: '정보와 관련된 프로필 만들기',
+    description: '자세한 유저 정보',
+  })
+  @UseGuards(JwtAuthGuard)
   @Post()
-  create(@Body() createProfileDto: CreateProfileDto) {
-    return this.profilesService.create(createProfileDto);
+  create(
+    @CurrentUser() user: User,
+    @Body() createProfileDto: CreateProfileDto,
+  ) {
+    const data = {
+      email: user.email,
+      ...createProfileDto,
+    };
+    // return data;
+    return this.profilesService.create(data);
   }
 
   @Get()

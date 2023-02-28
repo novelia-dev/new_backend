@@ -28,7 +28,6 @@ export class UsersController {
   })
   @Post('login')
   async logIn(@Body() body: LoginAuthDto) {
-    console.log('controller', body);
     return await this.authService.jwtLogIn(body);
   }
 

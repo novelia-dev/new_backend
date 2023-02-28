@@ -18,15 +18,11 @@ export class AuthService {
   ) {}
 
   async jwtLogIn(data: LoginAuthDto) {
-    console.log('data', data);
     const existedAccount = await this.usersService.findOneByEmail(data.email);
-    console.log('1');
     const validatePassword: boolean = await bcrypt.compare(
       data.password,
       existedAccount.password,
     );
-    console.log('2');
-    console.log('himan', existedAccount, validatePassword);
     if (!existedAccount || !validatePassword) {
       throw new UnauthorizedException();
     }

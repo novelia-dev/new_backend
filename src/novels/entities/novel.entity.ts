@@ -28,7 +28,7 @@ export class Novel extends BaseEntity {
   @Column()
   content: string;
 
-  @Column({ type: 'timestamp' })
+  @Column()
   start_date: Date;
 
   @Column({ default: 0 })
