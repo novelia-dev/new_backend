@@ -5,6 +5,10 @@ import {
   Route,
   Link,
 } from "react-router-dom";
+
+import ConnectLogin from "./components/Loginpage/ConnectLogin";
+import ConnectRegister from "./components/Registerpage/ConnectRegister";
+
 import Navbar from "./components/Navbar/Navbar"
 import Mainpage from "./components/Mainpage/Mainpage";
 import Loginpage from"./components/Loginpage/Loginpage";
@@ -35,6 +39,14 @@ import ChooseKeyword from "./components/RegisterText/ChooseKeyword";
 import Hilight from "./components/RegisterText/Hilight";
 import FeedSelect from "./components/RegisterText/FeedSelect";
 import Buy from "./components/Buy/Buy";
+import MyPage from "./components/MyPage/MyPage";
+import MyPage2 from "./components/MyPage/MyPage2";
+
+
+import MobileLoginPage from "./components/Loginpage/mobile/MobileLoginPage";
+import MobileRegisterPage from "./components/Registerpage/mobile/MobileRegisterPage";
+
+
 function App() {
   return (
     <Router>
@@ -42,6 +54,10 @@ function App() {
     
         <div>
           <Routes>
+
+            <Route path="/connectlogin" element= {<ConnectLogin />} />
+            <Route path="/connectregister" element={<ConnectRegister />} />
+
             <Route path="/" element={<Mainpage />} />
             <Route path ="/login" element={<Loginpage />} />
             <Route path ="/register" element={<Registerpage />} />
@@ -70,6 +86,13 @@ function App() {
             <Route path ="/high" element= {<Hilight />} />
             <Route path ="/feed" element= {<FeedSelect />} />
             <Route path ="/buy" element={<Buy />} />
+            <Route path ="/mypage" element={<MyPage />} />
+            <Route path ="/mypage2" element={<MyPage2 />} />
+
+
+            <Route path = "/mobilelogin" element={<MobileLoginPage />} />
+            <Route path = "/mobileregister" element={<MobileRegisterPage />} />
+
           </Routes>
           
         </div>
