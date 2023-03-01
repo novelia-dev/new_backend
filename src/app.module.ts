@@ -2,23 +2,26 @@ import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
-import { UsersModule } from './users/users.module';
+
 import { NovelsModule } from './modules/models/novels/novels.module';
-import { TagsModule } from './tags/tags.module';
-import { GenresModule } from './genres/genres.module';
-import { QuizsModule } from './quizs/quizs.module';
+
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Genre } from './genres/entities/genre.entity';
+
 import { Novel } from './modules/models/novels/entities/novel.entity';
-import { Quiz } from './quizs/entities/quiz.entity';
-import { Tag } from './tags/entities/tag.entity';
-import { User } from './users/entities/user.entity';
-import { ProfilesModule } from './profiles/profiles.module';
-import { Profile } from './profiles/entities/profile.entity';
-import { LongReviewsModule } from './long-reviews/long-reviews.module';
-import { ShortReviewsModule } from './short-reviews/short-reviews.module';
 import { LoggerMiddleware } from './commons/common/logger/logger.middleware';
 import { AuthModule } from './modules/functions/auth/auth.module';
+import { Genre } from './modules/models/genres/entities/genre.entity';
+import { Quiz } from './modules/models/quizs/entities/quiz.entity';
+import { Tag } from './modules/models/tags/entities/tag.entity';
+import { User } from './modules/models/users/entities/user.entity';
+import { Profile } from './modules/models/profiles/entities/profile.entity';
+import { UsersModule } from './modules/models/users/users.module';
+import { TagsModule } from './modules/models/tags/tags.module';
+import { GenresModule } from './modules/models/genres/genres.module';
+import { QuizsModule } from './modules/models/quizs/quizs.module';
+import { ProfilesModule } from './modules/models/profiles/profiles.module';
+import { LongReviewsModule } from './modules/models/long-reviews/long-reviews.module';
+import { ShortReviewsModule } from './modules/models/short-reviews/short-reviews.module';
 
 @Module({
   imports: [

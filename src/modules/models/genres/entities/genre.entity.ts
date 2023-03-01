@@ -1,4 +1,3 @@
-import { Profile } from 'src/profiles/entities/profile.entity';
 import {
   BaseEntity,
   Column,
@@ -9,6 +8,7 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { Profile } from '../../profiles/entities/profile.entity';
 
 @Entity()
 export class Genre extends BaseEntity {

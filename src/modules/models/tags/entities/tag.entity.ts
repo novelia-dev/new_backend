@@ -1,5 +1,4 @@
 import { Novel } from 'src/modules/models/novels/entities/novel.entity';
-import { Profile } from 'src/profiles/entities/profile.entity';
 import {
   BaseEntity,
   Column,
@@ -8,6 +7,7 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
+import { Profile } from '../../profiles/entities/profile.entity';
 
 @Entity()
 export class Tag extends BaseEntity {
