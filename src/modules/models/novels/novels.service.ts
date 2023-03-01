@@ -5,8 +5,8 @@ import { UpdateNovelDto } from './dto/update-novel.dto';
 import { Novel } from './entities/novel.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { ProfilesService } from 'src/profiles/profiles.service';
-import { Profile } from 'src/profiles/entities/profile.entity';
+import { Profile } from '../profiles/entities/profile.entity';
+import { ProfilesService } from '../profiles/profiles.service';
 
 @Injectable()
 export class NovelsService {

@@ -1,4 +1,4 @@
-import { Novel } from 'src/novels/entities/novel.entity';
+import { Novel } from 'src/modules/models/novels/entities/novel.entity';
 import {
   BaseEntity,
   Column,

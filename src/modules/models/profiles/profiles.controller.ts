@@ -12,9 +12,9 @@ import { ProfilesService } from './profiles.service';
 import { CreateProfileDto } from './dto/create-profile.dto';
 import { UpdateProfileDto } from './dto/update-profile.dto';
 import { ApiTags, ApiOperation } from '@nestjs/swagger';
-import { JwtAuthGuard } from 'src/auth/jwt/jwt.guard';
-import { CurrentUser } from 'src/common/decorators/user.decorator';
-import { User } from 'src/users/entities/user.entity';
+import { JwtAuthGuard } from 'src/modules/functions/auth/jwt/jwt.guard';
+import { CurrentUser } from 'src/commons/common/decorators/user.decorator';
+import { User } from '../users/entities/user.entity';
 
 @ApiTags('profiles')
 @Controller('profiles')

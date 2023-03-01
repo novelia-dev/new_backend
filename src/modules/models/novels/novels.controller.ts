@@ -13,10 +13,11 @@ import { NovelsService } from './novels.service';
 import { CreateNovelDto } from './dto/create-novel.dto';
 import { UpdateNovelDto } from './dto/update-novel.dto';
 import { ApiCreatedResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
-import { JwtAuthGuard } from 'src/auth/jwt/jwt.guard';
-import { User } from 'src/users/entities/user.entity';
-import { CurrentUser } from 'src/common/decorators/user.decorator';
+import { JwtAuthGuard } from 'src/modules/functions/auth/jwt/jwt.guard';
+
+import { CurrentUser } from 'src/commons/common/decorators/user.decorator';
 import { TitleContentDto } from './dto/title-content.dto';
+import { User } from '../users/entities/user.entity';
 
 @ApiTags('novels')
 @Controller('novels')

@@ -11,8 +11,8 @@ import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
-import { AuthService } from 'src/auth/auth.service';
-import { LoginAuthDto } from 'src/auth/dto/login-auth.dto';
+import { AuthService } from 'src/modules/functions/auth/auth.service';
+import { LoginAuthDto } from 'src/modules/functions/auth/dto/login-auth.dto';
 
 @ApiTags('user')
 @Controller('users')

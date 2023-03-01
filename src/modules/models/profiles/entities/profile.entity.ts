@@ -1,7 +1,5 @@
-import { Genre } from 'src/genres/entities/genre.entity';
-import { Novel } from 'src/novels/entities/novel.entity';
-import { Tag } from 'src/tags/entities/tag.entity';
-import { User } from 'src/users/entities/user.entity';
+import { Novel } from 'src/modules/models/novels/entities/novel.entity';
+
 import {
   BaseEntity,
   Column,
@@ -13,6 +11,9 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { User } from '../../users/entities/user.entity';
+import { Tag } from '../../tags/entities/tag.entity';
+import { Genre } from '../../genres/entities/genre.entity';
 
 @Entity()
 export class Profile extends BaseEntity {

@@ -1,6 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsDate, IsNotEmpty, IsNumber, IsString } from 'class-validator';
-import { User } from 'src/users/entities/user.entity';
 
 export class CreateNovelDto {
   @ApiProperty({

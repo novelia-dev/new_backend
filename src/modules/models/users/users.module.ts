@@ -5,8 +5,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './entities/user.entity';
 import { ProfilesService } from 'src/profiles/profiles.service';
 import { ProfilesModule } from 'src/profiles/profiles.module';
-import { AuthModule } from 'src/auth/auth.module';
-import { AuthService } from 'src/auth/auth.service';
+import { AuthModule } from 'src/modules/functions/auth/auth.module';
+import { AuthService } from 'src/modules/functions/auth/auth.service';
 
 @Module({
   imports: [TypeOrmModule.forFeature([User]), forwardRef(() => AuthModule)],

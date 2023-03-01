@@ -1,6 +1,3 @@
-import { Profile } from 'src/profiles/entities/profile.entity';
-import { Quiz } from 'src/quizs/entities/quiz.entity';
-import { Tag } from 'src/tags/entities/tag.entity';
 import {
   BaseEntity,
   Column,
@@ -13,6 +10,9 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { Quiz } from '../../quizs/entities/quiz.entity';
+import { Tag } from '../../tags/entities/tag.entity';
+import { Profile } from '../../profiles/entities/profile.entity';
 
 @Entity()
 export class Novel extends BaseEntity {

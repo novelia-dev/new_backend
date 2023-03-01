@@ -1,10 +1,10 @@
-import { UsersModule } from './../users/users.module';
 import { Module, forwardRef } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { JwtStrategy } from './jwt/jwt.strategy';
 import { ConfigService } from '@nestjs/config';
+import { UsersModule } from 'src/modules/models/users/users.module';
 
 @Module({
   imports: [

@@ -3,13 +3,13 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { UsersModule } from './users/users.module';
-import { NovelsModule } from './novels/novels.module';
+import { NovelsModule } from './modules/models/novels/novels.module';
 import { TagsModule } from './tags/tags.module';
 import { GenresModule } from './genres/genres.module';
 import { QuizsModule } from './quizs/quizs.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Genre } from './genres/entities/genre.entity';
-import { Novel } from './novels/entities/novel.entity';
+import { Novel } from './modules/models/novels/entities/novel.entity';
 import { Quiz } from './quizs/entities/quiz.entity';
 import { Tag } from './tags/entities/tag.entity';
 import { User } from './users/entities/user.entity';
@@ -17,8 +17,8 @@ import { ProfilesModule } from './profiles/profiles.module';
 import { Profile } from './profiles/entities/profile.entity';
 import { LongReviewsModule } from './long-reviews/long-reviews.module';
 import { ShortReviewsModule } from './short-reviews/short-reviews.module';
-import { LoggerMiddleware } from './common/logger/logger.middleware';
-import { AuthModule } from './auth/auth.module';
+import { LoggerMiddleware } from './commons/common/logger/logger.middleware';
+import { AuthModule } from './modules/functions/auth/auth.module';
 
 @Module({
   imports: [
