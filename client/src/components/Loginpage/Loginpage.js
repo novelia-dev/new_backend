@@ -3,7 +3,7 @@ import queryString from 'query-string';
 import Kakaoimage from '../Image/카카오톡.png';
 import Naver from '../Image/네이버.png';
 import Novelist from '../Image/image 1.png';
-import {KAKAO_AUTH_URL,REST_API_KEY,REDIRECT_URI} from './KakaoData';
+import {KAKAO_AUTH_URL,REST_API_KEY,REDIRECT_URI, SECRET} from './KakaoData';
 import {useLocation, useNavigate} from 'react-router-dom';
 import axios from 'axios';
 
@@ -80,14 +80,15 @@ const Login = (props) => {
             grant_type: "authorization_code",
             client_id: REST_API_KEY,
             redirect_uri: REDIRECT_URI,
-            code: code
+            code: code,
+            client_secret: SECRET
         };
 
         const queryString = Object.keys(data).map((k) => encodeURIComponent(k) + '=' + encodeURIComponent(data[k]))
         .join('&');
         axios.post('https://kauth.kakao.com/oauth/token', queryString, {
             headers:{
-                'Content-type': 'application/x-www-form-urlencoded; charset=utf-8'
+                'Content-type': 'application/x-www-form-urlencoded;charset=utf-8'
             }
         }).then((res) => {
             sendKakaoTokenToServer(res.data.access_token)
