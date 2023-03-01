@@ -1,5 +1,6 @@
 import React,{useState, Component} from "react";
 import axios from 'axios';
+import {useParams} from 'react-router-dom';
 
 import Dropzone from "react-dropzone";
 function FileUpload(props)
@@ -55,11 +56,10 @@ function FileUpload(props)
     )
 }
 
-function movetoRegister(){
-    window.location.href="/text/:text";
-}
+
 
 function RegisterText(props){
+    const id = useParams();
 
     const [Images, setImages] = useState([]);
 
@@ -72,6 +72,8 @@ function RegisterText(props){
     const [answer,setAnswer] =useState("");
     const [wrong1,setWrong1] =useState("");
     const [wrong2,setWrong2] = useState("");
+
+    const [quizs, setquizs] = useState([]);
  
     const updateTitle = (title) => {
         setTitle(title.target.value);
@@ -95,49 +97,92 @@ function RegisterText(props){
 
     const updateQuestion = (question) => {
         setQuestion(question.target.value);
+        setquizs(enters=>[...enters,question]);
     }
 
     const updateAnswer = (answer) => {
         setAnswer(answer.target.value);
+        setquizs(enters=>[...enters,answer]);
     }
 
     const updateWrong1 = (wrong1) => {
         setWrong1(wrong1.target.value);
+        setquizs(enters=>[...enters,wrong1]);
     }
 
     const updateWrong2 = (wrong2) => {
         setWrong2(wrong2.target.value);
+        setquizs(enters=>[...enters,wrong2]);
     }
+
+    const movetoRegister = (e) => {
+        e.preventDefault();
+
+        const formData = new FormData();
+        formData.append("name",genre);
+
+        axios({
+            method: "post",
+            url: "http://localhost:8000/genre",
+            data: formData,
+            headers: {"Content-Type": "multipart/form-data", Authorization: localStorage.getItem("access_token")}
+        }).then(response => {
+            if(response.data.success){
+                alert('저장 성공')
+            }
+            else{
+                alert('저장 실패')
+            }
+        })
+          
+    .catch((error) => {
+        if(error.response){
+            console.log(error.response);
+            console.log("server refused");
+        } else if(error.request){
+            console.log("network error");
+        } else{
+            console.log(error);
+        }
+    });
+        //window.location.href="/text/:text";
+    }
+    
+   
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if(!title || !genre || !tag || !content || !question || !answer || !wrong1 || !wrong2)
+        if(!title || !genre || !tag || !content || !question || !answer || !wrong1 || !wrong2) 
         {
             alert('모든 항목을 입력하세요.');
         }
 
+        const formData = new FormData();
+        formData.append("authorProfile",Images);
+        formData.append("title",title);
+        formData.append("tags",tag);
+        formData.append("content",content);
+        formData.append("quizs",quizs);
+       
 
-        var datatoSubmit = {
-            title: title,
-            genre: genre,
-            tags: tag,
-            content: content,
-            question: question,
-            answer: answer,
-            wrong1: wrong1,
-            wrong2: wrong2
-        };
-
-        axios.post('https://localhost:8000/novel/:id',datatoSubmit)
-        .then(response => {
-           if(response.data.success){
-            alert('저장 성공')
-        } else{
-            alert('저장 실패')
-        }
-
-    })
+        axios({
+            method: "get",
+            url: 'http://localhost:8000/novel',
+            params:{
+                id: id
+            },
+            data: formData,
+            headers: {"Content-Type": "multipart/form-data", Authorization: localStorage.getItem("access_token")}
+        }).then(response => {
+            if(response.data.success){
+                alert('저장 성공')
+            }
+            else{
+                alert('저장 실패')
+            }
+        })
+    
     .catch((error) => {
         if(error.response){
             console.log(error.response);
