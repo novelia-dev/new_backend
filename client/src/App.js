@@ -6,6 +6,8 @@ import {
   Link,
 } from "react-router-dom";
 
+
+
 import ConnectLogin from "./components/Loginpage/ConnectLogin";
 import ConnectRegister from "./components/Registerpage/ConnectRegister";
 
@@ -60,6 +62,7 @@ function App() {
 
             <Route path="/" element={<Mainpage />} />
             <Route path ="/login" element={<Loginpage />} />
+            <Route path ="/login/callback" element={<Loginpage/>} />
             <Route path ="/register" element={<Registerpage />} />
             <Route path ="/register2" element={<Registerpage2 />} />
             <Route path ="/register3" element={<Registerpage3 />} />

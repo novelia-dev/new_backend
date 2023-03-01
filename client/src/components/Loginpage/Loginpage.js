@@ -1,10 +1,11 @@
 import React,{Component, useEffect} from 'react';
+import queryString from 'query-string';
 import Kakaoimage from '../Image/카카오톡.png';
 import Naver from '../Image/네이버.png';
 import Novelist from '../Image/image 1.png';
-import {REST_API_KEY, REDIRECT_URI} from './KakaoLogin';
+import {KAKAO_AUTH_URL,REST_API_KEY,REDIRECT_URI} from './KakaoData';
 import {useLocation, useNavigate} from 'react-router-dom';
-
+import axios from 'axios';
 
 class Loginpage extends React.Component{
     constructor(props){
@@ -16,7 +17,7 @@ class Loginpage extends React.Component{
             <div>
                 
                 <Text />
-                <Kakao />
+                <Login />
             </div>
             
             
@@ -24,64 +25,97 @@ class Loginpage extends React.Component{
     }
 }
 
-function KakaoLogin()
-{
-    const location = useLocation();
-    const navigate = useNavigate();
-    const KAKAO_CODE = location.search.split('=')[1];
+// function KakaoLogin()
+// {
+//     const location = useLocation();
+//     const navigate = useNavigate();
+//     const KAKAO_CODE = location.search.split('=')[1];
    
 
-    const getKakaoToken = () => {
-        fetch(`https://kauth.kakao.com/oauth/token`, {
-            method: 'POST',
-            headers : {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'},
-            body: `grant_type=authorization_code&client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&code=${KAKAO_CODE}`,
-        })
-        .then(res => res.sjson())
-        .then(data => {
-            if(data.access_token){
-                localStorage.setItem('token', data.access_token);
+//     const getKakaoToken = () => {
+//         fetch(`https://kauth.kakao.com/oauth/token`, {
+//             method: 'POST',
+//             headers : {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'},
+//             body: `grant_type=authorization_code&client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&code=${KAKAO_CODE}`,
+//         })
+//         .then(res => res.sjson())
+//         .then(data => {
+//             if(data.access_token){
+//                 localStorage.setItem('token', data.access_token);
 
-            }else {
-                navigate('/');
-            }
-        });
-    };
+//             }else {
+//                 navigate('/');
+//             }
+//         });
+//     };
 
-    useEffect(() => {
-        if(!location.search) return;
-        getKakaoToken();
-    }, []);
+//     useEffect(() => {
+//         if(!location.search) return;
+//         getKakaoToken();
+//     }, []);
 
     
 
-    return (
-        <div>
-            <KakaoLogin />
-        </div>
-    )
-}
+//     return (
+//         <div>
+//             <KakaoLogin />
+//         </div>
+//     )
+// }
 
 
-class Kakao extends React.Component {
 
+const Login = (props) => {
+    const kauthUrl = KAKAO_AUTH_URL;
+    const query = queryString.parse(window.location.search);
 
-      render(){
+    useEffect(() => {
+        if(query.code){
+            getKakaoTokenHandler(query.code.toString());
+        }
+    }, []);
 
-       const Login = () => {
-            const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
-            window.location.href = KAKAO_AUTH_URL;
-             }
+    const getKakaoTokenHandler = async(code)=>{
+        const data = {
+            grant_type: "authorization_code",
+            client_id: REST_API_KEY,
+            redirect_uri: REDIRECT_URI,
+            code: code
+        };
 
-       
-        return(
-            <div style={{marginTop: "300px", marginLeft: "850px"}}>
-              <img className="Kakaoimage" alt="Kakaoimage" onClick={Login} style={{width:"180px", height:"163px"}}src={Kakaoimage} />
-            </div>
-        )
-
-
+        const queryString = Object.keys(data).map((k) => encodeURIComponent(k) + '=' + encodeURIComponent(data[k]))
+        .join('&');
+        axios.post('https://kauth.kakao.com/oauth/token', queryString, {
+            headers:{
+                'Content-type': 'application/x-www-form-urlencoded; charset=utf-8'
+            }
+        }).then((res) => {
+            sendKakaoTokenToServer(res.data.access_token)
+        });
     }
+    const sendKakaoTokenToServer = (token) => {
+        axios.post('/auth/kakao',{access_token: token})
+        .then(res => {
+            if(res.status == 201 || res.status == 200){
+                const user = res.data.user;
+                window.localStorage.setItem("token", JSON.stringify({
+                    access_token: res.data.jwt
+                }));
+            } else{
+                window.alert("로그인에 실패하였습니다.");
+            }
+        })
+    }
+
+    const moving = () => {
+        window.location.href = KAKAO_AUTH_URL;
+    }
+
+    return(<>
+        <div style={{marginTop: "300px", marginLeft: "850px"}}>
+            <img className="Kakaoimage" alt="Kakaoimage" onClick={moving} style={{width:"180px", height:"163px"}}src={Kakaoimage} />
+        </div>
+    </>)
 }
 
 
