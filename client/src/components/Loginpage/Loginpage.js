@@ -95,7 +95,7 @@ const Login = (props) => {
         });
     }
     const sendKakaoTokenToServer = (token) => {
-        axios.post('/auth/kakao',{access_token: token})
+        axios.post('http://localhost:8000/users/login',{access_token: token})
         .then(res => {
             if(res.status == 201 || res.status == 200){
                 const user = res.data.user;

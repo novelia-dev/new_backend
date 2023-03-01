@@ -114,7 +114,7 @@ function Text(){
                 age : age
             };
 
-            axios.post('https://localhost:8000/user',cast)
+            axios.post('http://localhost:8000/users',cast)
             .then(response =>{
                 if(response.data.success)
                 {
@@ -126,7 +126,7 @@ function Text(){
 
             localStorage.setItem("cast",JSON.stringify(cast));
             window.location.href="/register4"; }
-
+        
         const style={
             'position':'absolute',
             'margin-top': "-9px",
