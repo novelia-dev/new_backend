@@ -22,6 +22,7 @@ import { QuizsModule } from './modules/models/quizs/quizs.module';
 import { ProfilesModule } from './modules/models/profiles/profiles.module';
 import { LongReviewsModule } from './modules/models/long-reviews/long-reviews.module';
 import { ShortReviewsModule } from './modules/models/short-reviews/short-reviews.module';
+import { FileModule } from './modules/functions/file/file.module';
 
 @Module({
   imports: [
@@ -47,6 +48,7 @@ import { ShortReviewsModule } from './modules/models/short-reviews/short-reviews
     LongReviewsModule,
     ShortReviewsModule,
     AuthModule,
+    FileModule,
   ],
   controllers: [AppController],
   providers: [AppService],
