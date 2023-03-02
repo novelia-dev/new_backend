@@ -1,5 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsDate, IsNotEmpty, IsNumber, IsString } from 'class-validator';
+import { genreTypes } from 'src/commons/types/genres.type';
 
 export class TitleContentDto {
   @ApiProperty({
@@ -19,4 +20,12 @@ export class TitleContentDto {
   @IsNotEmpty()
   @IsString()
   content: string;
+
+  @ApiProperty({
+    name: 'genre',
+    example: '로맨스',
+    required: true,
+    // type: () => genreTypes,
+  })
+  genre: genreTypes;
 }

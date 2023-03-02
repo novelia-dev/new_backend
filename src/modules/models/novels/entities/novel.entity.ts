@@ -29,6 +29,9 @@ export class Novel extends BaseEntity {
   content: string;
 
   @Column()
+  genre: string;
+
+  @Column()
   start_date: Date;
 
   @Column({ default: 0 })

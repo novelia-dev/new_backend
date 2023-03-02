@@ -1,3 +1,4 @@
+import { genreTypes } from './../../../../commons/types/genres.type';
 import { ApiProperty } from '@nestjs/swagger';
 import { IsDate, IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
@@ -28,4 +29,12 @@ export class CreateNovelDto {
   @IsNotEmpty()
   @IsString()
   content: string;
+
+  @ApiProperty({
+    name: 'genre',
+    example: '로맨스',
+    required: true,
+    // type: () => genreTypes,
+  })
+  genre: genreTypes;
 }
