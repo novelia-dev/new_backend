@@ -2,6 +2,10 @@ import React from "react";
 import image from "../Image/수평로고.png";
 import './Posts.css';
 
+function movetodetail(){
+  window.location.href="/:id"
+}
+
 
 const Posts = ({ posts, loading }) => {
   return (
@@ -12,11 +16,11 @@ const Posts = ({ posts, loading }) => {
           <div className="contanier-fluid" key={post.id}>
             <div class="row">
               <div class="col-12 mt-3">
-                 <div class="card-horizontal">
+                 <div class="card-horizontal" onClick={movetodetail}>
                     <div class="img-square-wrapper" style={{marginTop:"25px"}}>
                       <img src={image} alt="사진" />
                     </div>
-                      <div class="card-body">
+                      <div class="card-body" >
                         <h4 class="card-title">재벌집 막내아들</h4>
                         <p class="card-text">
                           <h6>산경</h6>

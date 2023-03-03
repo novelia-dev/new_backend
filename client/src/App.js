@@ -13,6 +13,7 @@ import ConnectRegister from "./components/Registerpage/ConnectRegister";
 
 import Navbar from "./components/Navbar/Navbar"
 import Mainpage from "./components/Mainpage/Mainpage";
+import DetailPage from "./components/DetailPage/DetailPage";
 import Loginpage from"./components/Loginpage/Loginpage";
 import Registerpage from"./components/Registerpage/Registerpage";
 import Registerpage2 from "./components/Registerpage/Registerpage2";
@@ -61,6 +62,7 @@ function App() {
             <Route path="/connectregister" element={<ConnectRegister />} />
 
             <Route path="/" element={<Mainpage />} />
+            <Route path="/:id" element={<DetailPage />} />
             <Route path ="/login" element={<Loginpage />} />
             <Route path ="/login/callback" element={<Mainpage/>} />
             <Route path ="/register" element={<Registerpage />} />
