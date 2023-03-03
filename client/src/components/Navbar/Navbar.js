@@ -3,15 +3,14 @@ import Novelist from '../Image/Navbar_logo.png';
 import Bell from '../Image/bell.png';
 import NewText from '../Image/pen.png';
 import Mypage from '../Image/user.png';
+import useDetectClose from './useDetectClose';
 
 import './Navbar.css';
 
-function movetomypage(){
-  window.location.href="/mypage";
-}
-
 function Navbar(){
     const Text = ()=> {
+
+      const [myPageIsOpen, myPageRef, myPageHandler] = useDetectClose(false);
 
         return(
         <div>
@@ -24,7 +23,15 @@ function Navbar(){
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <img className="NewText" alt="NewText" style={{width:"24px", height:"23px"}}src={NewText}/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <img className="Mypage" alt="Mypage" style={{width:"24px", height:"23px"}}src={Mypage} onClick={movetomypage}></img>
+  
+            <img className="Mypage" alt="Mypage" style={{width:"24px", height:"23px"}}src={Mypage} onClick={myPageHandler} ref={myPageRef}></img>
+            <menu className="Mynav" isDropped={myPageIsOpen}>
+              <ui>
+                <li>메뉴1</li>
+                <li>메뉴2</li>
+                <li>메뉴3</li>
+              </ui>
+            </menu>
            </td>
            </tr>
            </table>

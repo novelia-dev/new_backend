@@ -14,6 +14,8 @@ import ConnectRegister from "./components/Registerpage/ConnectRegister";
 import Navbar from "./components/Navbar/Navbar"
 import Mainpage from "./components/Mainpage/Mainpage";
 import DetailPage from "./components/DetailPage/DetailPage";
+import DetailMyPage from "./components/DetailPage/DetailMyPage";
+import DetailPointShop from "./components/DetailPage/DetailPointShop";
 import Loginpage from"./components/Loginpage/Loginpage";
 import Registerpage from"./components/Registerpage/Registerpage";
 import Registerpage2 from "./components/Registerpage/Registerpage2";
@@ -42,8 +44,12 @@ import ChooseKeyword from "./components/RegisterText/ChooseKeyword";
 import Hilight from "./components/RegisterText/Hilight";
 import FeedSelect from "./components/RegisterText/FeedSelect";
 import Buy from "./components/Buy/Buy";
-import MyPage from "./components/MyPage/MyPage";
-import MyPage2 from "./components/MyPage/MyPage2";
+import MyPageInfo from "./components/MyPage/MyPageInfo";
+import MyPageInfoChange from "./components/MyPage/MyPageInfoChange";
+import MyPageFeedback from "./components/MyPage/MyPageFeedback";
+import MyPageFeedbackComplete from "./components/MyPage/MyPageFeedbackComplete";
+import MyPageScrap from "./components/MyPage/MyPageScrap";
+import MyPointShop from "./components/MyPage/MyPointShop";
 
 
 import MobileLoginPage from "./components/Loginpage/mobile/MobileLoginPage";
@@ -91,8 +97,15 @@ function App() {
             <Route path ="/high" element= {<Hilight />} />
             <Route path ="/feed" element= {<FeedSelect />} />
             <Route path ="/buy" element={<Buy />} />
-            <Route path ="/mypage" element={<MyPage />} />
-            <Route path ="/mypage2" element={<MyPage2 />} />
+            <Route path ="/myinfo" element={<MyPageInfo />} />
+            <Route path ="/myinfochange" element={<MyPageInfoChange />} />
+            <Route path ="/myfeedback" element={<MyPageFeedback/>} />
+            <Route path ="/myfeedbackcomplete" element={<MyPageFeedbackComplete />} />
+            <Route path ="/myscrap" element={<MyPageScrap />} />
+            <Route path ="/myscrap/:id" element={<DetailMyPage/>} />
+            <Route path ="/mypoint" element={<MyPointShop /> }/>
+            <Route path ="/mypoint/:id" element={<DetailPointShop />} />
+
 
 
             <Route path = "/mobilelogin" element={<MobileLoginPage />} />

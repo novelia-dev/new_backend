@@ -24,7 +24,12 @@ function jsonage(){
     return txt;
 }
 
-class MyPage extends React.Component{
+function movetochange(){
+    window.location.href="/myinfochange";
+}
+
+
+class MyPageInfo extends React.Component{
     constructor(props){
         super(props);
     }
@@ -141,7 +146,7 @@ class Text extends React.Component{
            
             <div>
                 <table style={style3}>
-                    <td><img src={main} style={{ width:"100px", height:"100px"}} alt="개인정보" /><button>변경하기</button> </td>
+                    <td><img src={main} style={{ width:"100px", height:"100px"}} alt="개인정보" /><button onClick={movetochange}>변경하기</button> </td>
                 </table>
                  
                  
@@ -151,10 +156,10 @@ class Text extends React.Component{
             <div style = {style4}>
                 <table>
                         <tr><h5>기본정보</h5></tr>
-                        <tr><h5>닉네임 :</h5><input value={jsonnickname()}/></tr>
-                        <tr><h5>성별 :</h5><input value={jsongender()} /></tr>
-                        <tr><h5>나이대 :</h5><input value={jsonage()} /></tr>
-                        <tr><h5>이메일 :</h5><input value={jsonemail()} /></tr>
+                        <tr><h5>닉네임 :</h5><input value="닉네임"/></tr>
+                        <tr><h5>성별 :</h5><input value="성별" /></tr>
+                        <tr><h5>나이대 :</h5><input value="나이" /></tr>
+                        <tr><h5>이메일 :</h5><input value="이메일" /></tr>
                 </table>
             </div>
             <div style={style5}>
@@ -284,4 +289,4 @@ class Text extends React.Component{
 }
 
 
-export default MyPage;
+export default MyPageInfo;
