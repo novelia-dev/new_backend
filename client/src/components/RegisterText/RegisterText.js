@@ -145,7 +145,7 @@ function RegisterText(props){
             console.log(error);
         }
     });
-        //window.location.href="/text/:text";
+        window.location.href="/text/:text";
     }
     
    
@@ -164,7 +164,7 @@ function RegisterText(props){
         formData.append("tags",tag);
         formData.append("content",content);
         formData.append("quizs",quizs);
-       
+        
 
         axios({
             method: "get",

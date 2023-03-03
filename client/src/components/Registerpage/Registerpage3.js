@@ -80,6 +80,8 @@ function Text(){
     const [email, setemail] = useState("");
     const [selected, setSelected] = useState("");
     const [age, setAge] = useState("");
+    const [route, setRoute] = useState("");
+
     
 
 
@@ -97,6 +99,10 @@ function Text(){
 
     const onAgehandler =(age) => {
         setAge(age.target.value);
+    }
+
+    const onRoutehandler = (route) => {
+        setRoute(route.target.value);
     }
 
     function activeButton(){
@@ -234,6 +240,11 @@ function Text(){
             </div>
             <div>
                 <button>Check</button>
+            </div>
+            <div>
+                <select name="유입경로" style={{width: "240px", height: "30px"}} onChange={onRoutehandler} >
+                    <option defaulValue="유입경로" hidden>유입경로*</option>    
+                </select> 
             </div>
             <div>
                 <h5 style={{width:"59px",height:"19px"}}>선호장르</h5>

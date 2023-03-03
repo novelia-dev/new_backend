@@ -41,7 +41,7 @@ function Mainpage(){
     return(
         <div>
           <Navbar/>
-          <div style={{marginLeft:"360px"}}>   
+          <div style={{marginLeft:"360px",  width:"1200px", height: "270px"}}>   
             <ImageSlider effectDelay={500} autoDelay={2000}>
                 <Slide>
                     <img alt="img1" style={{width:"1200px",height:"270px"}} src={Banner} />

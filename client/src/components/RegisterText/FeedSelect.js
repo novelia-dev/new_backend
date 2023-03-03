@@ -1,4 +1,9 @@
 import React from "react";
+import image1 from "../Image/Group 1722.png";
+import image2 from "../Image/Group 1723.png";
+import image3 from "../Image/Group 1724.png";
+
+
 
 function FeedSelect(){
     return(
@@ -17,9 +22,9 @@ function FeedSelect(){
                         <td>1+1</td>
                     </tr>
                     <tr>
-                        <td><img alt="객관식"/></td>
-                        <td><img alt="주관식"/></td>
-                        <td><img alt="1+1"/></td>
+                        <td><img src = {image1} alt="객관식"/></td>
+                        <td><img src = {image2} alt="주관식"/></td>
+                        <td><img src = {image3} alt="1+1"/></td>
                     </tr>
                     <tr>
                         <td>
@@ -40,6 +45,9 @@ function FeedSelect(){
                            <h5>내용: 앞의 2가지 상품을 할인된 가격에 제공</h5>
                            <input type="checkbox" /> 
                         </td>
+                    </tr>
+                    <tr>
+                        <h5>*결제는 게시기간이 끝난 뒤 작가 피드백을 열람하려고 할 때 진행됩니다. </h5>
                     </tr>
                     <button>다음</button>
                 </table>
