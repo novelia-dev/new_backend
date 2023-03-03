@@ -1,20 +1,16 @@
 import React from "react";
 
 function exchange(){
-  if(window.confirm("정말 교환하시겠습니까?") == true)
-  {
-    alert("교환이 완료되었습니다!")
+    if(window.confirm("정말 교환하시겠습니까?") == true)
+    {
+      alert("교환이 완료되었습니다!")
+    }
+    else{
+      return;
+    }
   }
-  else{
-    return;
-  }
-}
 
-function movetoInput(){
-  window.location.href="/myinput";
-}
-
-function DetailPointShop(){
+function MyInput(){
     return(
         <div>
             <div>
@@ -30,15 +26,13 @@ function DetailPointShop(){
                         <h6>잔여 포인트 : 8000</h6>
                     </td>
                     <td>
-                        <tr><button onClick={movetoInput}>경품 응모하기</button></tr>
+                        <tr><button>경품 응모하기</button></tr>
                         <tr><button>기프티콘보관함</button></tr>
                         <tr><button>포인트 획득/사용내역</button></tr>
                     </td>
                 </table>
             </div>
-
             <br />
-
             <div>
                 <h5>교환가능 상품 목록</h5>
             </div>
@@ -142,9 +136,8 @@ function DetailPointShop(){
           </div></td>
                 </table>
             </div>
-
         </div>
     )
 }
 
-export default DetailPointShop;
+export default MyInput;

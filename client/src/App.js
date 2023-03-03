@@ -50,7 +50,8 @@ import MyPageFeedback from "./components/MyPage/MyPageFeedback";
 import MyPageFeedbackComplete from "./components/MyPage/MyPageFeedbackComplete";
 import MyPageScrap from "./components/MyPage/MyPageScrap";
 import MyPointShop from "./components/MyPage/MyPointShop";
-
+import MyInput from "./components/MyPage/MyInput";
+import MyPointStats from "./components/MyPage/MyPointStats";
 
 import MobileLoginPage from "./components/Loginpage/mobile/MobileLoginPage";
 import MobileRegisterPage from "./components/Registerpage/mobile/MobileRegisterPage";
@@ -105,7 +106,8 @@ function App() {
             <Route path ="/myscrap/:id" element={<DetailMyPage/>} />
             <Route path ="/mypoint" element={<MyPointShop /> }/>
             <Route path ="/mypoint/:id" element={<DetailPointShop />} />
-
+            <Route path ="/myinput" element={<MyInput />} />
+            <Route path ="/mypointstats" element={<MyPointStats />} />
 
 
             <Route path = "/mobilelogin" element={<MobileLoginPage />} />

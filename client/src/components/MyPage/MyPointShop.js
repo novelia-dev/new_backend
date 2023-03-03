@@ -3,6 +3,9 @@ import React from "react";
 function movetoDetail(){
   window.location.href="/mypoint/:id";
 }
+function movetoInput(){
+  window.location.href="/myinput"
+}
 
 function MyPointShop(){
     return(
@@ -20,7 +23,7 @@ function MyPointShop(){
                         <h6>잔여 포인트 : 8000</h6>
                     </td>
                     <td>
-                        <tr><button>경품 응모하기</button></tr>
+                        <tr><button onClick={movetoInput}>경품 응모하기</button></tr>
                         <tr><button>기프티콘보관함</button></tr>
                         <tr><button>포인트 획득/사용내역</button></tr>
                     </td>
