@@ -56,9 +56,12 @@ import ChooseFeedback from "./components/Feedback/ChooseFeedback";
 import WriteFeedback from "./components/Feedback/WriteFeedback";
 
 import MobileLoginPage from "./components/Loginpage/mobile/MobileLoginPage";
+import MobileLoginPage2 from "./components/Loginpage/mobile/MobileLoginPage2";
 import MobileRegisterPage from "./components/Registerpage/mobile/MobileRegisterPage";
 import MobileRegisterPage2 from "./components/Registerpage/mobile/MobileRegisterPage2";
 import MobileMyPageInfo from "./components/MyPage/mobile/MobileMyPageInfo";
+import MobileMyPointShop from "./components/MyPage/mobile/MobileMyPointShop";
+import MobileDetailPointShop from "./components/DetailPage/mobile/MobileDetailPointShop";
 
 function App() {
   return (
@@ -116,9 +119,12 @@ function App() {
 
 
             <Route path = "/mobilelogin" element={<MobileLoginPage />} />
+            <Route path ="/mobilelogin2" element={<MobileLoginPage2 />} />
             <Route path = "/mobileregister" element={<MobileRegisterPage />} />
             <Route path = "/mobileregister2" element={<MobileRegisterPage2 />} />
             <Route path = "/mobilemyinfo" element={<MobileMyPageInfo />} />
+            <Route path ="/mobilemypoint" element={<MobileMyPointShop />} />
+            <Route path ="/mobilemypoint/:id" element={<MobileDetailPointShop />} /> 
           </Routes>
           
         </div>
