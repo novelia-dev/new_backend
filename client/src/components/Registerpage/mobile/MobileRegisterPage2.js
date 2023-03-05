@@ -1,6 +1,9 @@
-import React,{useState} from 'react';
-import MobileNavbar from "../../Navbar/MobileNavbar";
-import MobileFooter from "../../Footer/MobileFooter";
+import React,{useState} from 'react'
+
+function success(){
+    alert('회원가입이 완료되었습니다.');
+}
+
 function Button(){
     //선호장르
     let data=["선호장르","선호장르","선호장르","선호장르","선호장르","선호장르"];
@@ -77,7 +80,6 @@ function Button(){
           </>
         );
       })}
-        
          </table>
             <div>
                 <hr />
@@ -190,43 +192,52 @@ function Button(){
 }
 
 
-function MobileMypageInfo(){
+
+function MobileRegisterPage2(){
     return(
         <div>
-            <MobileNavbar />
+            <hr />
             <div>
-                <h5>My</h5>
+            
             </div>
             <hr />
             <div>
-                <table>
-                    <td>{/* 사용자 사진*/}</td>
-                    <td>
-                        <tr>
-                            <h5>기본정보</h5>
-                        </tr>
-                        <hr/>
-                        <tr>
-                            <tr>닉네임: </tr>
-                            <tr>성별: </tr>
-                            <tr>나이대: </tr>
-                            <tr>이메일: </tr>
-                        </tr>
-                    </td>
-                </table>
+              <label>닉네임</label><input type="text" placeholder="플레이스 홀더"/> <button>중복확인</button>
+            </div>
+            <div>
+                <select className="성별">
+                    <option value="none" default disabled>성별(남/여)</option>
+                    <option value="남">남</option>
+                    <option value="여">여</option>
+                </select>
+            </div>
+            <div>
+                <select className="나이">
+                    <option value="none" default disabled>나이대</option>
+                    <option value="10대">10대</option>
+                    <option value="20대">20대</option>
+                    <option value="30대">30대</option>
+                    <option value="40대">40대</option>
+                    <option value="50대 이상">50대 이상</option>
+                </select>
             </div>
             <hr />
-            <br />
+            <div>
+                <label>이메일</label><input type="email" placeholder="본인인증용 이메일"/> <button>코드받기</button>
+            </div>
+            <div>
+                <label>인증코드</label><input type="text" placeholder="메일로 받으신 코드를 입력하세요" /> <button>인증하기</button>
+            </div>
             <hr />
             <div>
                 <Button />
             </div>
             <hr />
-            <br />
+
+            <button onClick={success}>입력완료</button>
             <hr />
-            <MobileFooter />
         </div>
     )
 }
 
-export default MobileMypageInfo;
+export default MobileRegisterPage2;

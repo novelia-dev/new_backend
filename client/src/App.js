@@ -57,6 +57,7 @@ import WriteFeedback from "./components/Feedback/WriteFeedback";
 
 import MobileLoginPage from "./components/Loginpage/mobile/MobileLoginPage";
 import MobileRegisterPage from "./components/Registerpage/mobile/MobileRegisterPage";
+import MobileRegisterPage2 from "./components/Registerpage/mobile/MobileRegisterPage2";
 import MobileMyPageInfo from "./components/MyPage/mobile/MobileMyPageInfo";
 
 function App() {
@@ -116,6 +117,7 @@ function App() {
 
             <Route path = "/mobilelogin" element={<MobileLoginPage />} />
             <Route path = "/mobileregister" element={<MobileRegisterPage />} />
+            <Route path = "/mobileregister2" element={<MobileRegisterPage2 />} />
             <Route path = "/mobilemyinfo" element={<MobileMyPageInfo />} />
           </Routes>
           
