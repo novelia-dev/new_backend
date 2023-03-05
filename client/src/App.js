@@ -52,10 +52,12 @@ import MyPageScrap from "./components/MyPage/MyPageScrap";
 import MyPointShop from "./components/MyPage/MyPointShop";
 import MyInput from "./components/MyPage/MyInput";
 import MyPointStats from "./components/MyPage/MyPointStats";
+import ChooseFeedback from "./components/Feedback/ChooseFeedback";
+import WriteFeedback from "./components/Feedback/WriteFeedback";
 
 import MobileLoginPage from "./components/Loginpage/mobile/MobileLoginPage";
 import MobileRegisterPage from "./components/Registerpage/mobile/MobileRegisterPage";
-
+import MobileMyPageInfo from "./components/MyPage/mobile/MobileMyPageInfo";
 
 function App() {
   return (
@@ -108,11 +110,13 @@ function App() {
             <Route path ="/mypoint/:id" element={<DetailPointShop />} />
             <Route path ="/myinput" element={<MyInput />} />
             <Route path ="/mypointstats" element={<MyPointStats />} />
+            <Route path ="/:id/choose" element={<ChooseFeedback />} />
+            <Route path ="/:id/write" element={<WriteFeedback />} />
 
 
             <Route path = "/mobilelogin" element={<MobileLoginPage />} />
             <Route path = "/mobileregister" element={<MobileRegisterPage />} />
-
+            <Route path = "/mobilemyinfo" element={<MobileMyPageInfo />} />
           </Routes>
           
         </div>

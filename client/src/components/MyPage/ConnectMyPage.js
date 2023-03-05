@@ -1,15 +1,15 @@
 import React, {useState,useEffect} from 'react';
 
-function movetoweblogin(){
-    window.location.href="/login";
+function movetowebmypage(){
+    window.location.href="/myinfo";
 
 }
 
-function movetomobilelogin(){
-    window.location.href="/mobilelogin";
+function movetomobilemypage(){
+    window.location.href="/mobilemyinfo";
 }
 
-function ConnectLogin(){
+function ConnectMyPage(){
     const [innerWidth, setInnerWidth] = useState(window.innerWidth);
     
     useEffect(()=>{
@@ -22,10 +22,10 @@ function ConnectLogin(){
     function Connector(){
         if(innerWidth <= 360)
         {
-            movetomobilelogin();
+            movetomobilemypage();
         }
         else{
-            movetoweblogin();
+            movetowebmypage();
         }
     }
 
@@ -37,4 +37,4 @@ function ConnectLogin(){
 
 }
 
-export default ConnectLogin;
+export default ConnectMyPage;
