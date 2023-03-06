@@ -62,6 +62,7 @@ import MobileRegisterPage2 from "./components/Registerpage/mobile/MobileRegister
 import MobileMyPageInfo from "./components/MyPage/mobile/MobileMyPageInfo";
 import MobileMyPointShop from "./components/MyPage/mobile/MobileMyPointShop";
 import MobileDetailPointShop from "./components/DetailPage/mobile/MobileDetailPointShop";
+import MobileMyInput from "./components/MyPage/mobile/MobileMyInput";
 
 function App() {
   return (
@@ -124,7 +125,8 @@ function App() {
             <Route path = "/mobileregister2" element={<MobileRegisterPage2 />} />
             <Route path = "/mobilemyinfo" element={<MobileMyPageInfo />} />
             <Route path ="/mobilemypoint" element={<MobileMyPointShop />} />
-            <Route path ="/mobilemypoint/:id" element={<MobileDetailPointShop />} /> 
+            <Route path ="/mobilemypoint/:id" element={<MobileDetailPointShop />} />
+            <Route path ="/mobilemyinput" element={<MobileMyInput />} /> 
           </Routes>
           
         </div>
