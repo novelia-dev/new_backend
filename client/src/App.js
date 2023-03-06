@@ -63,6 +63,8 @@ import MobileMyPageInfo from "./components/MyPage/mobile/MobileMyPageInfo";
 import MobileMyPointShop from "./components/MyPage/mobile/MobileMyPointShop";
 import MobileDetailPointShop from "./components/DetailPage/mobile/MobileDetailPointShop";
 import MobileMyInput from "./components/MyPage/mobile/MobileMyInput";
+import MobileChooseFeedback from "./components/Feedback/mobile/MobileChooseFeedback";
+import MobileWriteFeedback from "./components/Feedback/mobile/MoblieWriteFeedback";
 
 function App() {
   return (
@@ -127,6 +129,8 @@ function App() {
             <Route path ="/mobilemypoint" element={<MobileMyPointShop />} />
             <Route path ="/mobilemypoint/:id" element={<MobileDetailPointShop />} />
             <Route path ="/mobilemyinput" element={<MobileMyInput />} /> 
+            <Route path ="/mobile/:id/choose" element={<MobileChooseFeedback />} />
+            <Route path ="/mobile/:id/write" element={<MobileWriteFeedback />} />
           </Routes>
           
         </div>

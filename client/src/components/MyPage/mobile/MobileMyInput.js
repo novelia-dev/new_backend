@@ -2,6 +2,15 @@ import React from 'react';
 import MobileNavbar from '../../Navbar/MobileNavbar';
 import MobileFooter from '../../Footer/MobileFooter';
 
+function exchange(){
+    if(window.confirm('정말 교환하시겠습니까?'))
+    {
+        alert("교환이 완료되었습니다.");
+    }else{
+        return;
+    }
+}
+
 function MobileMyInput(){
     return(
         <div>
@@ -29,7 +38,7 @@ function MobileMyInput(){
                     <h5>스타벅스 아메리카노 기프티콘 5매</h5>
                 </td>
                 <td>
-                <h5><button>경품 응모권 교환하기</button></h5>    
+                <h5><button onClick={exchange}>경품 응모권 교환하기</button></h5>    
                 </td>   
                 </tr>
                </table>
