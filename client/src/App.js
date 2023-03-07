@@ -91,9 +91,9 @@ function App() {
             <Route path ="/register2" element={<Registerpage2 />} />
             <Route path ="/register3" element={<Registerpage3 />} />
             <Route path ="/register4" element={<Registerpage4 />} />
-            <Route path ="/read" element={<Readworkpage />} />
-            <Route path ="/read2" element={<Readworkpage2 />} />
-            <Route path ="/read3" element={<Readworkpage3 />} />
+            <Route path ="/:id/read1" element={<Readworkpage />} />
+            <Route path ="/:id/read2" element={<Readworkpage2 />} />
+            <Route path ="/:id/read3" element={<Readworkpage3 />} />
             <Route path ="/notice" element={<Notice />} />
             <Route path ="/notice2" element={<Notice2 />} />
             <Route path ="/ask" element={<Ask />} />

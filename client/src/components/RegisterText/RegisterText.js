@@ -206,35 +206,41 @@ function RegisterText(props){
         <div>
             <table>
                 <td><FileUpload refreshFunction={updateImage} /></td>
+                <td>&nbsp;</td>
                 <td>
-                    <label>작품 감상 확인용 질문</label><input type="text" onChange={updateQuestion} placeholder="5화 분량을 읽고 알 수 있는 내용의 질문을 입력하세요. ex) 주인공의 이름? " />
+                    <label>작품 감상 확인용 질문 &nbsp;</label><input style={{width: "557px", height: "33px"}} type="text" onChange={updateQuestion} placeholder="5화 분량을 읽고 알 수 있는 내용의 질문을 입력하세요. ex) 주인공의 이름? " />
                     <br/>
-                    <label>정답</label><input type="text" onChange={updateAnswer} />
+                    <label>정답 &nbsp;</label><input type="text" onChange={updateAnswer} />
                     <br/>
-                    <label>오답</label><input type="text" onChange={updateWrong1} />
+                    <label>오답 &nbsp;</label><input type="text" onChange={updateWrong1} />
                     <br/>
-                    <label>오답</label><input type="text" onChange={updateWrong2} />
+                    <label>오답 &nbsp;</label><input type="text" onChange={updateWrong2} />
                 </td>
             </table>
             
         </div>
+        <br />
         <div>
-        <label>제목*</label><input type="text" placeholder="15자이내" onChange={updateTitle} />
+        <label>제목* &nbsp;</label><input style={{width: "240px" , height: "30px"}} type="text" placeholder="15자이내" onChange={updateTitle} />
         </div>
+        <br />
         <div>
-            <select name="장르선택" onChange={updateGenre}>
+            <select style={{width:"240px", height:"30px"}} name="장르선택" onChange={updateGenre}>
                 <option value="none" selected disabled hidden>장르선택</option>
                 <option value="로맨스">로맨스</option>
                 <option value="판타지">판타지</option>
+                <option value="로판">로판</option>
             </select>
         </div>
+        <br />
         <div>
         <table>
            <td><label>태그등록*</label><input type="text" placeholder="최소 2개 이상 입력" onChange={updateTag} /></td> 
-           <td><label>태그신청</label><input type="text" placeholder="신규태그를 신청하세요" /></td>
+           <td><label>&nbsp; 태그신청 &nbsp;</label><input type="text" placeholder="신규태그를 신청하세요" /></td>
         </table>
         
         </div>
+        <br />
         <div>
             <table>
                 <td><button>선택태그</button></td>
@@ -245,10 +251,12 @@ function RegisterText(props){
                 <td><button>선택태그</button></td>
             </table>
         </div>
+        <br />
         <div>
-            <label>작품설명</label>
-            <input type ="text" placeholder="500자 이내" onChange={updateContent} />
+            <label>작품설명 &nbsp;</label>
+            <input style={{width: "1170px" , height: "180px"}} type ="text" placeholder="500자 이내" onChange={updateContent} />
         </div>
+        <br />
         <div>
             <label>샘플 이미지</label>
             <table>
@@ -260,10 +268,19 @@ function RegisterText(props){
                 <td><img alt="샘플이미지6"></img></td>
             </table>
         </div>
+        <br />
+        <br />
         <div>
-            <button type="primary" onClick={handleSubmit}>저장</button>
-            <button onClick={movetoRegister}>다음</button>
-        </div>
+            <td>
+            <button style={{display: "flex", justifyContent:"center", flexDirection:"row", alignItems:"center", width: "102px", height: "45px", backgroundColor:"#FFFFFF" ,border:"1px solid #AA0140" ,borderRadius:"4px", marginLeft:"828px"}} type="primary" onClick={handleSubmit}>저장</button>
+            </td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>
+            <button style={{display: "flex", justifyContent:"center", flexDirection:"row", alignItems: "center", width: "102px", height:"45px", backgroundColor:"#AA0140", border:"1px solid #AA0140", borderRadius: "4px", color:"#FFFFFF"}}onClick={movetoRegister}>다음</button>
+        
+            </td>
+            
+            </div>    
         </div>
     )
 }
