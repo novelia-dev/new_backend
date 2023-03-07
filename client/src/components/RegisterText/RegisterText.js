@@ -3,6 +3,15 @@ import axios from 'axios';
 import {useParams} from 'react-router-dom';
 
 import Dropzone from "react-dropzone";
+
+import image1 from '../Image/couple-7590701_1920.jpg';
+import image2 from '../Image/fantasy-4379818_1920.jpg';
+import image3 from '../Image/illumination-5173540_1920.jpg';
+import image4 from '../Image/poster-2690541_1280.png';
+import image5 from '../Image/princess-2449970_1920.jpg';
+import image6 from '../Image/sci-fi-3310140_1920.jpg';
+
+
 function FileUpload(props)
 {
     const [Images, setImages] = useState([])
@@ -145,7 +154,7 @@ function RegisterText(props){
             console.log(error);
         }
     });
-        window.location.href="/text/:text";
+        window.location.href="/text/1";
     }
     
    
@@ -260,12 +269,12 @@ function RegisterText(props){
         <div>
             <label>샘플 이미지</label>
             <table>
-                <td><img alt="샘플이미지1"></img></td>
-                <td><img alt="샘플이미지2"></img></td>
-                <td><img alt="샘플이미지3"></img></td>
-                <td><img alt="샘플이미지4"></img></td>
-                <td><img alt="샘플이미지5"></img></td>
-                <td><img alt="샘플이미지6"></img></td>
+                <td><img style={{width:"164px", height:"246px"}} src={image1} alt="샘플이미지1"></img></td>
+                <td><img style={{width:"164px", height:"246px"}} src={image2} alt="샘플이미지2"></img></td>
+                <td><img style={{width:"164px", height:"246px"}} src={image3} alt="샘플이미지3"></img></td>
+                <td><img style={{width:"164px", height:"246px"}} src={image4} alt="샘플이미지4"></img></td>
+                <td><img style={{width:"164px", height:"246px"}} src={image5} alt="샘플이미지5"></img></td>
+                <td><img style={{width:"164px", height:"246px"}} src={image6} alt="샘플이미지6"></img></td>
             </table>
         </div>
         <br />
