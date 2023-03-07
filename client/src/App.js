@@ -66,7 +66,12 @@ import MobileDetailPointShop from "./components/DetailPage/mobile/MobileDetailPo
 import MobileMyInput from "./components/MyPage/mobile/MobileMyInput";
 import MobileChooseFeedback from "./components/Feedback/mobile/MobileChooseFeedback";
 import MobileWriteFeedback from "./components/Feedback/mobile/MoblieWriteFeedback";
-
+import MobileFavoritepage from "./components/Mainpage/mobile/MobileFavoritepage";
+import MobileScrappage from "./components/Mainpage/mobile/MobileScrappage";
+import MobileDetailScrap from "./components/DetailPage/mobile/MobileDetailScrap";
+import MobileDetaailScrapread from './components/DetailPage/mobile/MobileDetailScrapread';
+import MobileFeedbackpage from "./components/Mainpage/mobile/MobileFeedbackpage";
+import MobileDetailFeedback from "./components/DetailPage/mobile/MobileDetailFeedback";
 function App() {
   return (
     <Router>
@@ -130,8 +135,14 @@ function App() {
             <Route path ="/mobilemypoint" element={<MobileMyPointShop />} />
             <Route path ="/mobilemypoint/:id" element={<MobileDetailPointShop />} />
             <Route path ="/mobilemyinput" element={<MobileMyInput />} /> 
-            <Route path ="/mobile/:id/choose" element={<MobileChooseFeedback />} />
-            <Route path ="/mobile/:id/write" element={<MobileWriteFeedback />} />
+            <Route path ="/mobilefeedback/:id/choose" element={<MobileChooseFeedback />} />
+            <Route path ="/mobilefeedback/:id/write" element={<MobileWriteFeedback />} />
+            <Route path ="/mobilefavorite" element={<MobileFavoritepage /> } />
+            <Route path ="/mobilescrap" element ={<MobileScrappage />} />
+            <Route path ="/mobilescrap/:id" element={<MobileDetailScrap /> } />
+            <Route path ="/mobilescrap/:id/:text" element={<MobileDetaailScrapread />} />
+            <Route path ="/mobilefeedback" element={<MobileFeedbackpage />} /> 
+            <Route path = "/mobilefeedback/:id" element={<MobileDetailFeedback />} />
           </Routes>
           
         </div>
