@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import axios from "axios";
-
+import "./Tag.css";
 var state = {
     createdAuthCode:"",
     authCodeCheck: false,
@@ -74,6 +74,8 @@ class Registerpage3 extends React.Component{
     }
 }
 
+
+
 function Text(){
 
     const [nickname, setnickname] = useState("");
@@ -135,14 +137,17 @@ function Text(){
         
         const style={
             'position':'absolute',
-            'margin-top': "-9px",
+            'font-weight': 400,
+            'border-width':"1px",
+            'border-style':"solid",
+            'border-color':"#E5E5E5",
             'margin-left': "669px",
         }
         const style1={
             'width':"151px",
             'height':"17px",
+            'color':"#666666",
             'font-family': "Roboto",
-            'top':"-20px",
             'font-weight': 400,
             'font-size': "16px",
             'line-height': "19px",
@@ -169,34 +174,35 @@ function Text(){
             'gap':"10px",
             'width':"131px",
             'height':"45px",
-            
             'borderRadius': "4px",
             'font-family': "Roboto",
-            'top':"-20px",
             'font-weight': 400,
             'font-size': "16px",
             'line-height': "18.75px",
-            
-            
             'color': "#FFFFFF",
             'background-color':"#AA0140",
+            'margin-left':"17px"
             
         }
+        const [clicked,setClicked]=useState(false);
+        const onClick =()=> setClicked(!clicked);
     return(
+       
+    <div style={{'position':"static"}}>
+         
         <div style={style}>
-        
+         &nbsp; &nbsp;회원가입
+         <hr style={{'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}></hr>
         <div style={style1}>
-            닉네임*
+        &nbsp; &nbsp;닉네임*
         </div>
         <div style={style2}>
-            <input type="label"placeholder="플레이스 홀더" onChange={onnicknamehandler}></input>
-
-        </div>
-        <div style={style3} onClick={activeButton}>
-        <botton > 중복확인</botton>
-        </div>
-        <div>
-               <select name="성별" style={{width:"240px",height:"30px"}} onChange={ongenderhandler}>
+        &nbsp; &nbsp;<input type="label"placeholder="플레이스 홀더" onChange={onnicknamehandler}></input>
+                     
+        </div><botton style={style3} onClick={activeButton}>중복확인</botton>
+        
+        <div style={{marginTop:"15px"}}>
+        &nbsp; &nbsp;<select name="성별" style={{width:"240px",height:"30px"}} onChange={ongenderhandler}>
                   <option defaultValue="성별(남/여)" hidden>성별(남/여)*</option>
                   <option value="남">
                     남
@@ -206,8 +212,8 @@ function Text(){
                   </option>
                </select>
             </div>
-            <div>
-                <select name="나이대" style={{width:"240px",height:"30px"}} onChange={onAgehandler}>
+            <div style={{marginTop:"15px"}}>
+        &nbsp; &nbsp;<select name="나이대" style={{width:"240px",height:"30px"}} onChange={onAgehandler}>
                     <option defaultValue="나이대" hidden>나이대*</option>
                     <option value="10대">
                         10대
@@ -223,34 +229,35 @@ function Text(){
                     </option>
                 </select>
         </div>
-        <div>
-                <h5 style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666"}}>이메일*</h5>
+        <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px"}}>
+        &nbsp;이메일*
+            </div>
+            <div></div>
+            <div>
+            &nbsp; &nbsp;<input type="label" style={{width:"240px",height:"30px",marginTop:"15px"}} placeholder="본인인증용 이메일" onChange={onemailhandler}></input>
             </div>
             <div>
-                <input type="label" style={{width:"240px",height:"30px"}} placeholder="본인인증용 이메일" onChange={onemailhandler}></input>
+            &nbsp; &nbsp;<button style={{marginTop:"15px"}}>Check</button>
+            </div>
+            <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px"}}>
+            &nbsp; 이메일 확인*
             </div>
             <div>
-                <button>Check</button>
+            &nbsp; &nbsp;<input type="label" style={{width:"240px",height:"30px",marginTop:"15px"}} placeholder="이메일 확인"></input>
             </div>
             <div>
-                <h5 style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666"}}>이메일 확인*</h5>
+            &nbsp; &nbsp;<button  style={{marginTop:"15px"}}>Check</button>
             </div>
             <div>
-                <input type="label" style={{width:"240px",height:"30px"}} placeholder="이메일 확인"></input>
-            </div>
-            <div>
-                <button>Check</button>
-            </div>
-            <div>
-                <select name="유입경로" style={{width: "240px", height: "30px"}} onChange={onRoutehandler} >
+            &nbsp; &nbsp;<select name="유입경로" style={{width: "240px", height: "30px",marginTop:"15px"}} onChange={onRoutehandler} >
                     <option defaulValue="유입경로" hidden>유입경로*</option>    
                 </select> 
             </div>
-            <div>
-                <h5 style={{width:"59px",height:"19px"}}>선호장르</h5>
+            <div style={{marginTop:"15px"}}>
+             &nbsp; 선호장르
             </div>
             <div>
-                <table>
+                <table style={{marginTop:"15px"}}>
                     <tr>
                         <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
                         <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
@@ -342,10 +349,11 @@ function Text(){
         <div>
         <button style={style3} onClick={submitactiveButton}>입력완료</button>
         </div>
-    
+        </div>
         </div>
     )
 }
+
 
 
 
