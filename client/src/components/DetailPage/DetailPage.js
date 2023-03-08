@@ -3,13 +3,28 @@ import {useParams} from "react-router-dom";
 import image from "../Image/Ellipse 1.png";
 import image1 from "../Image/illumination-5173540_1920.jpg";
 
+function moveto(){
+    window.location.href="/:id";
+}
+function movetomain(){
+    window.location.href="/";
+}
+
+function movetochoose(){
+    window.location.href="/:id/choose";
+}
+
+function movetowrite(){
+    window.location.href="/:id/write";
+}
+
 function DetailPage(props){
 
     let {id} = useParams();
 
     return(
         <div>
-            <img src={image} alt="뒤로가기" />
+            <img src={image} alt="뒤로가기" onClick={movetomain} />
             <table>
                 <td>
                     <div className="container-fluid">
@@ -59,8 +74,8 @@ function DetailPage(props){
                                                 <input type="text" value="『자금이라는 것은 주인인 내가 알지 머슴이 뭘 압니까』" style={{width:"578px", height:"133px"}}/> 
                                             </td>
                                             <td>
-                                                <tr><button>객관식 참여</button></tr>
-                                                <tr><button>주관식 참여</button></tr>    
+                                                <tr><button onClick={movetochoose}>객관식 참여</button></tr>
+                                                <tr><button onClick={movetowrite}>주관식 참여</button></tr>    
                                             </td>
                                         </table>
                                          
@@ -88,7 +103,7 @@ function DetailPage(props){
                                     <div class="img-square-wrapper">
                                     <img style={{width:"306px", height:"459px"}} src={image1}alt="작품 사진" />
                                     </div>
-                                    <div class="card-body">
+                                    <div class="card-body" onClick={moveto}>
                                         <h2 class="card-title">재벌집 막내아들</h2>
                                         <p class="card-text">
                                         <h4>산경</h4>
@@ -146,7 +161,7 @@ function DetailPage(props){
                                     <div class="img-square-wrapper">
                                     <img style={{width:"306px", height:"459px"}} src={image1}alt="작품 사진" />
                                     </div>
-                                    <div class="card-body">
+                                    <div class="card-body" onClick={moveto}>
                                         <h2 class="card-title">재벌집 막내아들</h2>
                                         <p class="card-text">
                                         <h4>산경</h4>
@@ -206,7 +221,7 @@ function DetailPage(props){
                                     <div class="img-square-wrapper">
                                     <img style={{width:"306px", height:"459px"}} src={image1}alt="작품 사진" />
                                     </div>
-                                    <div class="card-body">
+                                    <div class="card-body" onClick={moveto}>
                                         <h2 class="card-title">재벌집 막내아들</h2>
                                         <p class="card-text">
                                         <h4>산경</h4>
@@ -264,7 +279,7 @@ function DetailPage(props){
                                     <div class="img-square-wrapper">
                                     <img style={{width:"306px", height:"459px"}} src={image1}alt="작품 사진" />
                                     </div>
-                                    <div class="card-body">
+                                    <div class="card-body" onClick={moveto}>
                                         <h2 class="card-title">재벌집 막내아들</h2>
                                         <p class="card-text">
                                         <h4>산경</h4>

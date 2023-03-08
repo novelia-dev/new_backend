@@ -12,9 +12,17 @@ function movetomain(){
 }
 
 function Navbar(){
+
+  
+
+
     const Text = ()=> {
 
-      const [myPageIsOpen, myPageRef, myPageHandler] = useDetectClose(false);
+      const [isOpen, setMenu] = useState(false);
+
+      const toggleMenu = () => {
+        setMenu(isOpen => !isOpen);
+      }
 
         return(
         <div>
@@ -28,14 +36,13 @@ function Navbar(){
             <img className="NewText" alt="NewText" style={{width:"24px", height:"23px"}}src={NewText}/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   
-            <img className="Mypage" alt="Mypage" style={{width:"24px", height:"23px"}}src={Mypage} onClick={myPageHandler} ref={myPageRef}></img>
-            <menu className="Mynav" isDropped={myPageIsOpen}>
-              <ui>
-                <li>메뉴1</li>
-                <li>메뉴2</li>
-                <li>메뉴3</li>
-              </ui>
-            </menu>
+            <img className="header" alt="Mypage" style={{width:"24px", height:"23px"}}src={Mypage} onClick={() => toggleMenu()}></img>
+              <ul className={isOpen?"show-menu":"hide-menu"}>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+              </ul>
            </td>
            </tr>
            </table>

@@ -34,6 +34,7 @@ function Choose(){
 
     const Click =() =>{
         alert('피드백 참여가 완료되었습니다.');
+        window.location.href="/:id";
     }
 
     return(
