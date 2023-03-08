@@ -1,7 +1,8 @@
 import React from 'react';
 import MobileNavbar from '../../Navbar/MobileNavbar';
 import MobileFooter from '../../Footer/MobileFooter';
-
+import image from "../../Image/모바일 배너.png";
+import image1 from "../../Image/illumination-5173540_1920.jpg";
 
 function MobileMainpage(){
     return(
@@ -14,27 +15,33 @@ function MobileMainpage(){
                 </table>
             </div>
             <div>
-                <img alt="배너" />
+                <img style={{width:"360px" , height:"250px"}} src={image} alt="배너" />
             </div>
             <hr />
             <div>
               <h4>선호태그 작품</h4>
               <table>
-                <td><button>선호태그</button></td>
-                <td><button>선호태그</button></td>
-                <td><button>선호태그</button></td>
-                <td><button>선호태그</button></td>
-                <td><button>선호태그</button></td>
-                <td><button>선호태그</button></td>
+                <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선호태그</button></td>
+                <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선호태그</button></td>
+                <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선호태그</button></td>
+                <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선호태그</button></td>
+                <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선호태그</button></td>
+                <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선호태그</button></td>
               </table>
             </div>
             <div>
                 <table>
                     <tr>
-                        <td><img alt="이미지" /> &nbsp;</td>
-                        <td><img alt="이미지" /> &nbsp;</td>
-                        <td><img alt="이미지" /> &nbsp;</td>
-                        <td><img alt="이미지" /> &nbsp;</td>
+                        <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;</td>
+                        <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;</td>
+                        <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;</td>
+                        <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;</td>
                     </tr>
                     <tr>
                         <td><h5>아빠가 힘을 숨김 &nbsp;</h5></td>
@@ -52,10 +59,10 @@ function MobileMainpage(){
             <div>
                 <table>
                     <tr>
-                        <td><img alt="이미지" /> &nbsp;</td>
-                        <td><img alt="이미지" /> &nbsp;</td>
-                        <td><img alt="이미지" /> &nbsp;</td>
-                        <td><img alt="이미지" /> &nbsp;</td>
+                    <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;</td>
+                    <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;</td>
+                    <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;</td>
+                    <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;</td>
                     </tr>
                     <tr>
                         <td><h5>아빠가 힘을 숨김 &nbsp;</h5></td>
@@ -73,10 +80,10 @@ function MobileMainpage(){
             <div>
                 <table>
                     <tr>
-                        <td><img alt="이미지" /> &nbsp;</td>
-                        <td><img alt="이미지" /> &nbsp;</td>
-                        <td><img alt="이미지" /> &nbsp;</td>
-                        <td><img alt="이미지" /> &nbsp;</td>
+                    <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;</td>
+                    <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;</td>
+                    <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;</td>
+                    <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;</td>
                     </tr>
                     <tr>
                         <td><h5>아빠가 힘을 숨김 &nbsp;</h5></td>
