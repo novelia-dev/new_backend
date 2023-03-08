@@ -1,4 +1,5 @@
 import React from "react";
+import image from '../Image/Starbucks.png';
 
 function movetoDetail(){
   window.location.href="/mypoint/:id";
@@ -14,6 +15,7 @@ function MyPointShop(){
                 <h4>포인트 샵</h4>
                 <h5>모은 포인트를 사용할 수 있습니다.</h5>
             </div>
+            <hr />
             <div>
                 <table>
                     <td><img alt="사용자사진" /></td>
@@ -38,7 +40,7 @@ function MyPointShop(){
               <div class="col-12 mt-3">
                  <div class="card" onClick={movetoDetail}>
                     <div class="img-square-wrapper" style={{marginTop:"25px"}}>
-                      <img alt="사진" />
+                      <img src={image} alt="사진" />
                     </div>
                       <div class="card-body" >
                         <h4 class="card-title">스타벅스 아메리카노 기프티콘</h4>
@@ -56,7 +58,7 @@ function MyPointShop(){
               <div class="col-12 mt-3">
                  <div class="card" onClick={movetoDetail}>
                     <div class="img-square-wrapper" style={{marginTop:"25px"}}>
-                      <img alt="사진" />
+                      <img src={image} alt="사진" />
                     </div>
                       <div class="card-body" >
                         <h4 class="card-title">스타벅스 아메리카노 기프티콘</h4>
@@ -74,7 +76,7 @@ function MyPointShop(){
               <div class="col-12 mt-3">
                  <div class="card" onClick={movetoDetail}>
                     <div class="img-square-wrapper" style={{marginTop:"25px"}}>
-                      <img alt="사진" />
+                      <img src={image} alt="사진" />
                     </div>
                       <div class="card-body" >
                         <h4 class="card-title">스타벅스 아메리카노 기프티콘</h4>
@@ -92,7 +94,7 @@ function MyPointShop(){
               <div class="col-12 mt-3">
                  <div class="card" onClick={movetoDetail}>
                     <div class="img-square-wrapper" style={{marginTop:"25px"}}>
-                      <img alt="사진" />
+                      <img src={image} alt="사진" />
                     </div>
                       <div class="card-body" >
                         <h4 class="card-title">스타벅스 아메리카노 기프티콘</h4>
@@ -112,7 +114,7 @@ function MyPointShop(){
               <div class="col-12 mt-3">
                  <div class="card" onClick={movetoDetail}>
                     <div class="img-square-wrapper" style={{marginTop:"25px"}}>
-                      <img alt="사진" />
+                      <img src={image} alt="사진" />
                     </div>
                       <div class="card-body" >
                         <h4 class="card-title">스타벅스 아메리카노 기프티콘</h4>
@@ -130,7 +132,7 @@ function MyPointShop(){
               <div class="col-12 mt-3">
                  <div class="card" onClick={movetoDetail}>
                     <div class="img-square-wrapper" style={{marginTop:"25px"}}>
-                      <img alt="사진" />
+                      <img src={image} alt="사진" />
                     </div>
                       <div class="card-body" >
                         <h4 class="card-title">스타벅스 아메리카노 기프티콘</h4>
@@ -148,7 +150,7 @@ function MyPointShop(){
               <div class="col-12 mt-3">
                  <div class="card" onClick={movetoDetail}>
                     <div class="img-square-wrapper" style={{marginTop:"25px"}}>
-                      <img alt="사진" />
+                      <img  src={image} alt="사진" />
                     </div>
                       <div class="card-body" >
                         <h4 class="card-title">스타벅스 아메리카노 기프티콘</h4>
@@ -166,7 +168,7 @@ function MyPointShop(){
               <div class="col-12 mt-3">
                  <div class="card" onClick={movetoDetail}>
                     <div class="img-square-wrapper" style={{marginTop:"25px"}}>
-                      <img alt="사진" />
+                      <img  src={image} alt="사진" />
                     </div>
                       <div class="card-body" >
                         <h4 class="card-title">스타벅스 아메리카노 기프티콘</h4>

@@ -1,4 +1,6 @@
 import React from "react";
+import image from '../Image/Starbucks.png';
+import image1 from '../Image/Ticket.png';
 
 function exchange(){
     if(window.confirm("정말 교환하시겠습니까?") == true)
@@ -38,12 +40,14 @@ function MyInput(){
             </div>
             <div>
                 <table>
-                    <td><img alt="기프티콘 이미지" /></td>
-                    <td>
-                        <tr><h4>스타벅스 아메리카노 기프티콘</h4></tr>
+                    <tr><img src={image1} style={{width:"300px", height:"159.99px"}} alt="기프티콘 이미지" /></tr>
+                    <tr>
+                        <tr><h4>3월 2주차 경품 응모권(3월 6일 발표)</h4></tr>
+                        <tr><h5>bhc황금올리브 기프티콘 1매, 문화상품권 1만원 3매, 스타벅스 아메리카노 기프티콘5매</h5></tr>
+                        <table>
                         <tr>
-                            <h6>수량</h6>
-                            <select>
+                            <td><h6>수량 &nbsp;</h6></td>
+                            <td><select style={{width:"237px"}}>
                                 <option value="1" default>1개</option>
                                 <option value="2">2개</option>
                                 <option value="3">3개</option>
@@ -54,10 +58,12 @@ function MyInput(){
                                 <option value="8">8개</option>
                                 <option value="9">9개</option>
                                 <option value="10">10개</option>
-                            </select>
+                            </select></td>
+                            <td><button onClick={exchange}>교환하기</button></td>
                         </tr>
-                        <tr><button onClick={exchange}>교환하기</button></tr>
-                    </td>
+                        </table>
+                        
+                    </tr>
                 </table>
             </div>
             <div>
@@ -67,7 +73,7 @@ function MyInput(){
               <div class="col-12 mt-3">
                  <div class="card">
                     <div class="img-square-wrapper" style={{marginTop:"25px"}}>
-                      <img alt="사진" />
+                      <img src={image} alt="사진" />
                     </div>
                       <div class="card-body" >
                         <h4 class="card-title">스타벅스 아메리카노 기프티콘</h4>
@@ -85,7 +91,7 @@ function MyInput(){
               <div class="col-12 mt-3">
                  <div class="card">
                     <div class="img-square-wrapper" style={{marginTop:"25px"}}>
-                      <img alt="사진" />
+                      <img src={image} alt="사진" />
                     </div>
                       <div class="card-body" >
                         <h4 class="card-title">스타벅스 아메리카노 기프티콘</h4>
@@ -103,7 +109,7 @@ function MyInput(){
               <div class="col-12 mt-3">
                  <div class="card">
                     <div class="img-square-wrapper" style={{marginTop:"25px"}}>
-                      <img alt="사진" />
+                      <img src={image} alt="사진" />
                     </div>
                       <div class="card-body" >
                         <h4 class="card-title">스타벅스 아메리카노 기프티콘</h4>
@@ -121,7 +127,7 @@ function MyInput(){
               <div class="col-12 mt-3">
                  <div class="card">
                     <div class="img-square-wrapper" style={{marginTop:"25px"}}>
-                      <img alt="사진" />
+                      <img src={image} alt="사진" />
                     </div>
                       <div class="card-body" >
                         <h4 class="card-title">스타벅스 아메리카노 기프티콘</h4>
