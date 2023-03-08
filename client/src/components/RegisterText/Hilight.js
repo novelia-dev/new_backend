@@ -61,7 +61,7 @@ function Hilight(){
                 </table> 
             </div>
             <div>
-                <button onClick={movetoFeed}>다음</button>
+                <button style={{width: "102px", height:"45px", borderRadius:"4px",color:"#FFFFFF", backgroundColor:"#AA0140",border:"1px solid #AA0140", marginLeft: "600px" }} onClick={movetoFeed}>다음</button>
             </div>
             <div>
 

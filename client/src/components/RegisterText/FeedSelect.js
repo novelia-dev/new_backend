@@ -6,6 +6,20 @@ import image3 from "../Image/Group 1724.png";
 
 
 function FeedSelect(){
+
+    var num = 0;
+
+    const handleChange =(e) => {
+        num = 1;
+    }
+
+    function moveto(){
+        if(num === 1)
+        {
+            window.location.href = "/choosekeyword";
+        }
+    }
+
     return(
         <div>
             <div>
@@ -31,7 +45,7 @@ function FeedSelect(){
                           <h5>가격: 3만원</h5>
                           <h5>게시기간: 7일</h5>
                           <h5>내용: 독자 30명에게 받는 최대 40가지 객관식 피드백</h5>
-                          <input type="checkbox" />
+                          <input type="checkbox" onClick={handleChange} />
                         </td>
                         <td>
                           <h5>가격: 3만원</h5>
@@ -49,7 +63,7 @@ function FeedSelect(){
                     <tr>
                         <h5>*결제는 게시기간이 끝난 뒤 작가 피드백을 열람하려고 할 때 진행됩니다. </h5>
                     </tr>
-                    <button>다음</button>
+                    <button style={{width: "102px", height:"45px", borderRadius:"4px",color:"#FFFFFF", backgroundColor:"#AA0140",border:"1px solid #AA0140", marginLeft: "600px" }} onClick={moveto}>다음</button>
                 </table>
             </div>
         </div>
