@@ -31,6 +31,9 @@ function Hilight(){
     const handleChange4 = (e) => {
         src = $('#image4').attr("src");
     }
+
+    var num = 1;
+    
     
 
     return(
@@ -44,7 +47,7 @@ function Hilight(){
             <div>
                 <table>
                     <tr>
-                    <td><img style={{width:"306px", height:"306px"}} src={src}  alt="작품하이라이트" /></td>
+                    <td><img style={{width:"306px", height:"306px"}} src={image} id="photo"  alt="작품하이라이트" /></td>
                     <td><label>하이라이트 &nbsp;</label><input style={{width:"863px", height:"210px"}} type="text" placeholder="30자이내" id="big"/></td>
                     </tr>
                     </table>
