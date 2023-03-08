@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Readworkpage2 extends React.Component{
+class Readworkpage5 extends React.Component{
     constructor(props){
         super(props);
     }
@@ -152,4 +152,4 @@ class Text extends React.Component{
     }
 }
 
-export default Readworkpage2;
+export default Readworkpage5;

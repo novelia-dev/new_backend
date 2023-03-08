@@ -8,30 +8,12 @@ class Readworkpage extends React.Component{
         return(
             <div>
                 <Text />
-               <Square/>
             </div>
         )
     }
 }
 
-class Square extends React.Component{
-    constructor(props){
-        super(props);
-    }
-    render(){
-        const style={
-            width:"581px",
-            height:"1081px",
-            'margin-left':'670px',
-            'background-color': "#D9D9D9",
-        };
-        return(
-            <div style = {style}>
 
-            </div>
-        )
-    }
-}
 
 class Text extends React.Component{
     constructor(props)

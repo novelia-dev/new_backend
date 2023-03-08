@@ -63,24 +63,24 @@ function Choose(){
             <div>
                 <table>
                     <tr>
-                        <td><button>1</button></td>
-                        <td><button>1</button></td>
+                        <td><button>주인공 능력이 매력적이예요</button></td>
+                        <td><button>주인공 능력이 매력적이예요</button></td>
                     </tr>
                     <tr>
-                        <td><button>1</button></td>
-                        <td><button>1</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
                     </tr>
                     <tr>
-                        <td><button>1</button></td>
-                        <td><button>1</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
                     </tr>
                     <tr>
-                        <td><button>1</button></td>
-                        <td><button>1</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
                     </tr>
                     <tr>
-                        <td><button>1</button></td>
-                        <td><button>1</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
                     </tr>
                 </table>
             </div>
@@ -89,25 +89,24 @@ function Choose(){
             </div>
             <div>
                 <table>
-                    <tr>
-                        <td><button>1</button></td>
-                        <td><button>1</button></td>
+                    <tr><td><button>주인공 능력이 매력적이예요</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
                     </tr>
                     <tr>
-                        <td><button>1</button></td>
-                        <td><button>1</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
                     </tr>
                     <tr>
-                        <td><button>1</button></td>
-                        <td><button>1</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
                     </tr>
                     <tr>
-                        <td><button>1</button></td>
-                        <td><button>1</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
                     </tr>
                     <tr>
-                        <td><button>1</button></td>
-                        <td><button>1</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
                     </tr>
                 </table>
             </div>
@@ -117,24 +116,24 @@ function Choose(){
             <div>
                 <table>
                     <tr>
-                        <td><button>1</button></td>
-                        <td><button>1</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
                     </tr>
                     <tr>
-                        <td><button>1</button></td>
-                        <td><button>1</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
                     </tr>
                     <tr>
-                        <td><button>1</button></td>
-                        <td><button>1</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
                     </tr>
                     <tr>
-                        <td><button>1</button></td>
-                        <td><button>1</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
                     </tr>
                     <tr>
-                        <td><button>1</button></td>
-                        <td><button>1</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
                     </tr>
                 </table>
             </div>
@@ -144,24 +143,24 @@ function Choose(){
             <div>
                 <table>
                     <tr>
-                        <td><button>1</button></td>
-                        <td><button>1</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
                     </tr>
                     <tr>
-                        <td><button>1</button></td>
-                        <td><button>1</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
                     </tr>
                     <tr>
-                        <td><button>1</button></td>
-                        <td><button>1</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
                     </tr>
                     <tr>
-                        <td><button>1</button></td>
-                        <td><button>1</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
                     </tr>
                     <tr>
-                        <td><button>1</button></td>
-                        <td><button>1</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
+                    <td><button>주인공 능력이 매력적이예요</button></td>
                     </tr>
                 </table>
             </div>

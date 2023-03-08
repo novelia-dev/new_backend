@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react'
-import Banner from '../Image/imageslider1.png';
+import Banner from '../Image/노벨리에 사전예약 기간 배너-001.png';
 import Pagination from "./Pagination";
 import Posts from "./Posts";
 import axios from 'axios';
@@ -7,7 +7,7 @@ import Navbar from "../Navbar/Navbar";
 import Footer from '../Footer/Footer';
 import ImageSlider, {Slide} from 'react-auto-image-slider';
 
-import sub from '../Image/imageslider1.png';
+import sub from '../Image/노벨리에 사전예약 기간 배너-001.png';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

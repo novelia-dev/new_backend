@@ -25,6 +25,8 @@ import Footer from "./components/Footer/Footer";
 import Readworkpage from "./components/Readworkpage/Readworkpage";
 import Readworkpage2 from "./components/Readworkpage/Readworkpage2";
 import Readworkpage3 from "./components/Readworkpage/Readworkpage3";
+import Readworkpage4 from "./components/Readworkpage/Readworkpage4";
+import Readworkpage5 from "./components/Readworkpage/Readworkpage5";
 import Notice from "./components/Notice/Notice";
 import Notice2 from "./components/Notice/Notice2";
 import Ask from "./components/Ask/Ask";
@@ -94,14 +96,16 @@ function App() {
             <Route path ="/:id/read1" element={<Readworkpage />} />
             <Route path ="/:id/read2" element={<Readworkpage2 />} />
             <Route path ="/:id/read3" element={<Readworkpage3 />} />
+            <Route path ="/:id/read4" element={<Readworkpage4 />} />
+            <Route path ="/:id/read5" element={<Readworkpage5 />} />
             <Route path ="/notice" element={<Notice />} />
             <Route path ="/notice2" element={<Notice2 />} />
             <Route path ="/ask" element={<Ask />} />
             <Route path ="/tos" element={<Tos />} />
             <Route path ="/privacy" element={<Privacypolicy />} />
             <Route path = "/about" element = {<About />} />
-            <Route path ="/choose" element={<Choose />} />
-            <Route path ="/write" element= {<Write />} />
+            <Route path ="/:id/choose" element={<Choose />} />
+            <Route path ="/:id/write" element= {<Write />} />
             <Route path ="/text" element= {<RegisterText />} />
             <Route path = "/text/:text" element={<RegisterText2 />}/>
             <Route path = "/text/1" element = {<RegisterText3 />} />
@@ -123,8 +127,8 @@ function App() {
             <Route path ="/mypoint/:id" element={<DetailPointShop />} />
             <Route path ="/myinput" element={<MyInput />} />
             <Route path ="/mypointstats" element={<MyPointStats />} />
-            <Route path ="/:id/choose" element={<ChooseFeedback />} />
-            <Route path ="/:id/write" element={<WriteFeedback />} />
+            <Route path ="/:id/chooseFeedback" element={<ChooseFeedback />} />
+            <Route path ="/:id/writeFeedback" element={<WriteFeedback />} />
 
             <Route path ="/mobile" element={<MobileMainPage />} />
             <Route path = "/mobilelogin" element={<MobileLoginPage />} />
