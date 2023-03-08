@@ -52,6 +52,7 @@ import MyPageFeedback from "./components/MyPage/MyPageFeedback";
 import MyPageFeedbackComplete from "./components/MyPage/MyPageFeedbackComplete";
 import MyPageScrap from "./components/MyPage/MyPageScrap";
 import MyPointShop from "./components/MyPage/MyPointShop";
+import MyGiftCoupon from "./components/MyPage/MyGiftCoupon";
 import MyInput from "./components/MyPage/MyInput";
 import MyPointStats from "./components/MyPage/MyPointStats";
 import ChooseFeedback from "./components/Feedback/ChooseFeedback";
@@ -74,6 +75,7 @@ import MobileDetailScrap from "./components/DetailPage/mobile/MobileDetailScrap"
 import MobileDetaailScrapread from './components/DetailPage/mobile/MobileDetailScrapread';
 import MobileFeedbackpage from "./components/Mainpage/mobile/MobileFeedbackpage";
 import MobileDetailFeedback from "./components/DetailPage/mobile/MobileDetailFeedback";
+import DetailMyGiftCoupon from "./components/DetailPage/DetailMyGiftCoupon";
 function App() {
   return (
     <Router>
@@ -125,6 +127,8 @@ function App() {
             <Route path ="/myscrap/:id" element={<DetailMyPage/>} />
             <Route path ="/mypoint" element={<MyPointShop /> }/>
             <Route path ="/mypoint/:id" element={<DetailPointShop />} />
+            <Route path ="/mygift" element={<MyGiftCoupon />} />
+            <Route path ="/mygift/:id" element={<DetailMyGiftCoupon />} />
             <Route path ="/myinput" element={<MyInput />} />
             <Route path ="/mypointstats" element={<MyPointStats />} />
             <Route path ="/:id/chooseFeedback" element={<ChooseFeedback />} />

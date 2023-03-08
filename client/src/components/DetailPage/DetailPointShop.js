@@ -1,4 +1,6 @@
 import React from "react";
+import image from '../Image/Starbucks.png';
+import image1 from '../Image/Ticket.png';
 
 function exchange(){
   if(window.confirm("정말 교환하시겠습니까?") == true)
@@ -12,6 +14,14 @@ function exchange(){
 
 function movetoInput(){
   window.location.href="/myinput";
+}
+
+function movetoStats(){
+  window.location.href="/mypointstats";
+}
+
+function movetoGift(){
+  window.location.href="/mygift";
 }
 
 function DetailPointShop(){
@@ -31,8 +41,8 @@ function DetailPointShop(){
                     </td>
                     <td>
                         <tr><button onClick={movetoInput}>경품 응모하기</button></tr>
-                        <tr><button>기프티콘보관함</button></tr>
-                        <tr><button>포인트 획득/사용내역</button></tr>
+                        <tr><button onClick={movetoGift}>기프티콘보관함</button></tr>
+                        <tr><button onClick={movetoStats}>포인트 획득/사용내역</button></tr>
                     </td>
                 </table>
             </div>
@@ -44,12 +54,13 @@ function DetailPointShop(){
             </div>
             <div>
                 <table>
-                    <td><img alt="기프티콘 이미지" /></td>
-                    <td>
+                    <tr><img src={image} style={{width:"159.99px", height:"159.99px"}} alt="기프티콘 이미지" /></tr>
+                    <tr>
                         <tr><h4>스타벅스 아메리카노 기프티콘</h4></tr>
+                        <table>
                         <tr>
-                            <h6>수량</h6>
-                            <select>
+                            <td><h4>수량 &nbsp;</h4></td>
+                            <td><select  style={{width:"237px"}}>
                                 <option value="1" default>1개</option>
                                 <option value="2">2개</option>
                                 <option value="3">3개</option>
@@ -60,10 +71,13 @@ function DetailPointShop(){
                                 <option value="8">8개</option>
                                 <option value="9">9개</option>
                                 <option value="10">10개</option>
-                            </select>
+                            </select></td>
+                            <td><button onClick={exchange}>교환하기</button></td>
                         </tr>
-                        <tr><button onClick={exchange}>교환하기</button></tr>
-                    </td>
+                        </table>
+                        
+                    </tr>
+                    
                 </table>
             </div>
             <div>
@@ -73,7 +87,7 @@ function DetailPointShop(){
               <div class="col-12 mt-3">
                  <div class="card">
                     <div class="img-square-wrapper" style={{marginTop:"25px"}}>
-                      <img alt="사진" />
+                    <img src={image} style={{width:"159.99px", height:"159.99px"}} alt="기프티콘 이미지" />
                     </div>
                       <div class="card-body" >
                         <h4 class="card-title">스타벅스 아메리카노 기프티콘</h4>
@@ -91,7 +105,7 @@ function DetailPointShop(){
               <div class="col-12 mt-3">
                  <div class="card">
                     <div class="img-square-wrapper" style={{marginTop:"25px"}}>
-                      <img alt="사진" />
+                    <img src={image} style={{width:"159.99px", height:"159.99px"}} alt="기프티콘 이미지" />
                     </div>
                       <div class="card-body" >
                         <h4 class="card-title">스타벅스 아메리카노 기프티콘</h4>
@@ -109,7 +123,7 @@ function DetailPointShop(){
               <div class="col-12 mt-3">
                  <div class="card">
                     <div class="img-square-wrapper" style={{marginTop:"25px"}}>
-                      <img alt="사진" />
+                    <img src={image} style={{width:"159.99px", height:"159.99px"}} alt="기프티콘 이미지" />
                     </div>
                       <div class="card-body" >
                         <h4 class="card-title">스타벅스 아메리카노 기프티콘</h4>
@@ -127,7 +141,7 @@ function DetailPointShop(){
               <div class="col-12 mt-3">
                  <div class="card">
                     <div class="img-square-wrapper" style={{marginTop:"25px"}}>
-                      <img alt="사진" />
+                    <img src={image} style={{width:"159.99px", height:"159.99px"}} alt="기프티콘 이미지" />
                     </div>
                       <div class="card-body" >
                         <h4 class="card-title">스타벅스 아메리카노 기프티콘</h4>

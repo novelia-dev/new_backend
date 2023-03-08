@@ -1,5 +1,8 @@
 import React from 'react';
 import main from '../Image/image 1.png';
+import Navbar from '../Navbar/SimpleNavbar';
+
+
 function jsonnickname(){
     let json = JSON.parse(localStorage.getItem("cast"));
     let txt = json.nickname;
@@ -133,6 +136,7 @@ class Text extends React.Component{
         }
         return(
             <div>
+                <Navbar />
                 <table>
                     <tr>
             <div style={style}>

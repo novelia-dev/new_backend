@@ -3,29 +3,43 @@ import image from '../Image/Starbucks.png';
 import image1 from '../Image/Ticket.png';
 
 function exchange(){
-    if(window.confirm("정말 교환하시겠습니까?") == true)
+  if(window.confirm("정말 사용하시겠습니까?") == true)
+  {
+    alert("사용이 완료되었습니다!")
+  }
+  else{
+    return;
+  }
+}
+
+function download(){
+    if(window.confirm("다운로드 하시겠습니까?") == true)
     {
-      alert("교환이 완료되었습니다!")
+        alert("다운로드가 완료되었습니다.")
     }
     else{
-      return;
+        return;
     }
-  }
+}
 
-  function movetoStats(){
-    window.location.href="/mypointstats";
-  }
+function movetoInput(){
+  window.location.href="/myinput";
+}
 
-  function movetoGift(){
+function movetoStats(){
+  window.location.href="/mypointstats";
+}
+
+function movetoGift(){
     window.location.href="/mygift";
   }
 
-function MyInput(){
+function DetailMyGiftCoupon(){
     return(
         <div>
             <div>
-                <h4>포인트 샵</h4>
-                <h5>모은 포인트를 사용할 수 있습니다.</h5>
+                <h4>기프티콘 보관함</h4>
+                <h5>교환한 기프티콘 목록입니다.</h5>
             </div>
             <div>
                 <table>
@@ -36,42 +50,33 @@ function MyInput(){
                         <h6>잔여 포인트 : 8000</h6>
                     </td>
                     <td>
-                        <tr><button>경품 응모하기</button></tr>
+                        <tr><button onClick={movetoInput}>경품 응모하기</button></tr>
                         <tr><button onClick={movetoGift}>기프티콘보관함</button></tr>
                         <tr><button onClick={movetoStats}>포인트 획득/사용내역</button></tr>
                     </td>
                 </table>
             </div>
+
             <br />
+
             <div>
-                <h5>교환가능 상품 목록</h5>
+                <h5>교환한 기프티콘</h5>
             </div>
             <div>
                 <table>
-                    <tr><img src={image1} style={{width:"300px", height:"159.99px"}} alt="기프티콘 이미지" /></tr>
+                    <tr><img src={image} style={{width:"159.99px", height:"159.99px"}} alt="기프티콘 이미지" /></tr>
                     <tr>
-                        <tr><h4>3월 2주차 경품 응모권(3월 6일 발표)</h4></tr>
-                        <tr><h5>bhc황금올리브 기프티콘 1매, 문화상품권 1만원 3매, 스타벅스 아메리카노 기프티콘5매</h5></tr>
+                        
                         <table>
                         <tr>
-                            <td><h6>수량 &nbsp;</h6></td>
-                            <td><select style={{width:"237px"}}>
-                                <option value="1" default>1개</option>
-                                <option value="2">2개</option>
-                                <option value="3">3개</option>
-                                <option value="4">4개</option>
-                                <option value="5">5개</option>
-                                <option value="6">6개</option>
-                                <option value="7">7개</option>
-                                <option value="8">8개</option>
-                                <option value="9">9개</option>
-                                <option value="10">10개</option>
-                            </select></td>
-                            <td><button onClick={exchange}>교환하기</button></td>
+                            <td><h4>스타벅스 아메리카노 기프티콘 &nbsp;</h4></td>
+                            <td><button onClick={download}>다운로드</button></td>
+                            <td><button onClick={exchange}>사용한 기프티콘으로 표시하기</button></td>
                         </tr>
                         </table>
                         
                     </tr>
+                    
                 </table>
             </div>
             <div>
@@ -81,7 +86,7 @@ function MyInput(){
               <div class="col-12 mt-3">
                  <div class="card">
                     <div class="img-square-wrapper" style={{marginTop:"25px"}}>
-                      <img src={image} alt="사진" />
+                    <img src={image} style={{width:"159.99px", height:"159.99px"}} alt="기프티콘 이미지" />
                     </div>
                       <div class="card-body" >
                         <h4 class="card-title">스타벅스 아메리카노 기프티콘</h4>
@@ -99,7 +104,7 @@ function MyInput(){
               <div class="col-12 mt-3">
                  <div class="card">
                     <div class="img-square-wrapper" style={{marginTop:"25px"}}>
-                      <img src={image} alt="사진" />
+                    <img src={image} style={{width:"159.99px", height:"159.99px"}} alt="기프티콘 이미지" />
                     </div>
                       <div class="card-body" >
                         <h4 class="card-title">스타벅스 아메리카노 기프티콘</h4>
@@ -117,7 +122,7 @@ function MyInput(){
               <div class="col-12 mt-3">
                  <div class="card">
                     <div class="img-square-wrapper" style={{marginTop:"25px"}}>
-                      <img src={image} alt="사진" />
+                    <img src={image} style={{width:"159.99px", height:"159.99px"}} alt="기프티콘 이미지" />
                     </div>
                       <div class="card-body" >
                         <h4 class="card-title">스타벅스 아메리카노 기프티콘</h4>
@@ -135,7 +140,7 @@ function MyInput(){
               <div class="col-12 mt-3">
                  <div class="card">
                     <div class="img-square-wrapper" style={{marginTop:"25px"}}>
-                      <img src={image} alt="사진" />
+                    <img src={image} style={{width:"159.99px", height:"159.99px"}} alt="기프티콘 이미지" />
                     </div>
                       <div class="card-body" >
                         <h4 class="card-title">스타벅스 아메리카노 기프티콘</h4>
@@ -150,8 +155,9 @@ function MyInput(){
           </div></td>
                 </table>
             </div>
+
         </div>
     )
 }
 
-export default MyInput;
+export default DetailMyGiftCoupon;

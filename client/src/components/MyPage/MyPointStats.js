@@ -3,6 +3,9 @@ import React from "react";
 function movetoInput(){
     window.location.href="/myinput";
 }
+function movetoGift(){
+    window.location.href="/mygift";
+  }
 
 function MyPointStats(){
     return(
@@ -21,7 +24,7 @@ function MyPointStats(){
                     </td>
                     <td>
                         <tr><button onClick={movetoInput}>경품 응모하기</button></tr>
-                        <tr><button>기프티콘보관함</button></tr>
+                        <tr><button onClick={movetoGift}>기프티콘보관함</button></tr>
                         <tr><button>포인트 획득/사용내역</button></tr>
                     </td>
                 </table>
