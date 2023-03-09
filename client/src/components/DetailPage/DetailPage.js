@@ -3,25 +3,27 @@ import {useParams} from "react-router-dom";
 import image from "../Image/Ellipse 1.png";
 import image1 from "../Image/illumination-5173540_1920.jpg";
 
-function moveto(){
-    window.location.href="/:id";
-}
-function movetomain(){
-    window.location.href="/";
-}
 
-function movetochoose(){
-    window.location.href="/:id/choose";
-}
-
-function movetowrite(){
-    window.location.href="/:id/write";
-}
 
 function DetailPage(props){
 
-    let {id} = useParams();
+    function moveto(){
+        window.location.href=`/${id}`;
+    }
+    function movetomain(){
+        window.location.href="/";
+    }
+    
+    function movetochoose(){
+        window.location.href=`/${id}/choose`;
+    }
+    
+    function movetowrite(){
+        window.location.href=`/${id}/write`;
+    }
 
+
+    let {id} = useParams();
     return(
         <div>
             <img src={image} alt="뒤로가기" onClick={movetomain} />

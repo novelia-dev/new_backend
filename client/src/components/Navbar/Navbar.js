@@ -4,6 +4,7 @@ import Bell from '../Image/bell.png';
 import NewText from '../Image/pen.png';
 import Mypage from '../Image/user.png';
 import useDetectClose from './useDetectClose';
+import {Drawer,Button} from 'antd';
 
 import './Navbar.css';
 
@@ -18,11 +19,15 @@ function Navbar(){
 
     const Text = ()=> {
 
-      const [isOpen, setMenu] = useState(false);
+      const [open, setOpen] = useState(false);
 
-      const toggleMenu = () => {
-        setMenu(isOpen => !isOpen);
-      }
+      const showDrawer = () => {
+        setOpen(true);
+      };
+
+      const onClose = () => {
+        setOpen(false)
+      };
 
         return(
         <div>
@@ -36,13 +41,21 @@ function Navbar(){
             <img className="NewText" alt="NewText" style={{width:"24px", height:"23px"}}src={NewText}/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   
-            <img className="header" alt="Mypage" style={{width:"24px", height:"23px"}}src={Mypage} onClick={() => toggleMenu()}></img>
-              <ul className={isOpen?"show-menu":"hide-menu"}>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-              </ul>
+            <img className="header" alt="Mypage" style={{width:"24px", height:"23px"}}src={Mypage}></img>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <Button style={{width:"24px" , height:"24px"}} className="menu_button" type="primary" onClick={showDrawer}>
+
+            </Button>
+            <Drawer 
+              title="Basic Drawer"
+              placement = "right"
+              className = "menu_drawer"
+              closable={false}
+              onClose={onClose}
+              open={open}
+            >
+              <h5>Hello world!</h5>
+            </Drawer>
            </td>
            </tr>
            </table>
@@ -55,7 +68,7 @@ function Navbar(){
         return(
             <div>
                 <Text />
-                <Button/>
+                <Button1/>
             </div>
         )
     
@@ -63,7 +76,7 @@ function Navbar(){
 
 
 //npm install styled-component 해야됨
- function Button() {
+ function Button1() {
     let data=["전체작품","객관식작","주관식작","선호태그","선호태그","선호태그","선호태그","선호태그","선호태그","선호태그","선호태그","선호태그","선호태그"];
     let[btnActive, setBtnActive] = useState("");
     const toggleActive = (e) => {
