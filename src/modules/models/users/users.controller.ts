@@ -13,6 +13,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { AuthService } from 'src/modules/functions/auth/auth.service';
 import { LoginAuthDto } from 'src/modules/functions/auth/dto/login-auth.dto';
+import { SocialLoginRequestDto } from 'src/modules/functions/auth/dto/social-login-auth.dto';
 
 @ApiTags('user')
 @Controller('users')
@@ -22,13 +23,22 @@ export class UsersController {
     private readonly authService: AuthService,
   ) {}
 
+  // @ApiOperation({
+  //   description: '로그인 하기',
+  //   summary: '로그인',
+  // })
+  // @Post('login')
+  // async logIn(@Body() body: LoginAuthDto) {
+  //   return await this.authService.jwtLogIn(body);
+  // }
+
   @ApiOperation({
-    description: '로그인 하기',
-    summary: '로그인',
+    description: '소셜로그인 하기',
+    summary: '소셜로그인',
   })
   @Post('login')
-  async logIn(@Body() body: LoginAuthDto) {
-    return await this.authService.jwtLogIn(body);
+  async logIn(@Body() body: SocialLoginRequestDto) {
+    return await this.authService.login(body);
   }
 
   @Post()

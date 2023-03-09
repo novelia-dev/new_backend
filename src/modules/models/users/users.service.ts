@@ -5,6 +5,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { User } from './entities/user.entity';
 import { Repository } from 'typeorm';
 import { AuthService } from 'src/modules/functions/auth/auth.service';
+import { SocialCreateUserDto } from './dto/social-create-user.dto';
 
 @Injectable()
 export class UsersService {
@@ -15,6 +16,14 @@ export class UsersService {
 
   async create(createUserDto: CreateUserDto) {
     return this.usersRepository.save(createUserDto);
+  }
+
+  async socialCreate(data: SocialCreateUserDto) {
+    const newData = {
+      email: data.email,
+      password: data.name,
+    };
+    return this.usersRepository.save(newData);
   }
 
   async findAll() {
