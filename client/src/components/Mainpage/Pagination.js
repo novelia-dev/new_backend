@@ -10,7 +10,7 @@ const Pagination = () => {
   return(
     <Paging
       activePage = {page}
-      itemsCountPerPage={8}
+      itemsCountPerPage={4}
       totalItemsCount={100}
       pageRangeDisplayed={10}
       prevPageText={"<"}

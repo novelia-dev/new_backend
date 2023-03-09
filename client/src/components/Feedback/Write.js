@@ -34,6 +34,7 @@ function Choose(){
 
     const Click =() =>{
         alert('피드백 참여가 완료되었습니다.');
+        window.location.href="/:id";
     }
 
     return(
@@ -61,13 +62,13 @@ function Choose(){
                 <h5>좋았던 점</h5>
             </div>
             <div>
-                <input type="text" placeholder="300자 이상 입력해주세요. 작가분들께 직접 전달되는 피드백 입니다. 높임말을 사용해주세요. 욕설, 비난, 조롱의 경우 서비스 이용 제제 사유 입니다."></input>
+                <input style={{width:"588px", height:"382px"}} type="text" placeholder="300자 이상 입력해주세요. 작가분들께 직접 전달되는 피드백 입니다. 높임말을 사용해주세요. 욕설, 비난, 조롱의 경우 서비스 이용 제제 사유 입니다."></input>
             </div>
             <div>
                 <h5>아쉬웠던 점</h5>
             </div>
             <div>
-                <input type="text" placeholder="300자 이상 입력해주세요. 작가분들께 직접 전달되는 피드백 입니다. 높임말을 사용해주세요. 욕설, 비난, 조롱의 경우 서비스 이용 제제 사유 입니다."></input>
+                <input style={{width:"588px", height:"382px"}} type="text" placeholder="300자 이상 입력해주세요. 작가분들께 직접 전달되는 피드백 입니다. 높임말을 사용해주세요. 욕설, 비난, 조롱의 경우 서비스 이용 제제 사유 입니다."></input>
             </div>
             <div>
                 <button onClick={Click}>제출하기</button>

@@ -57,7 +57,7 @@ var state = {
 //     }
 // }
 
-class MyPage2 extends React.Component{
+class MyPageInfoChange extends React.Component{
     constructor(props){
         super(props);
     }
@@ -125,7 +125,7 @@ function Text(){
             })
 
             localStorage.setItem("cast",JSON.stringify(cast));
-            window.location.href="/register4"; }
+            window.location.href="/myinfo"; }
 
         const style={
             'position':'absolute',
@@ -340,4 +340,4 @@ function Text(){
 
 
 
-export default MyPage2;
+export default MyPageInfoChange;

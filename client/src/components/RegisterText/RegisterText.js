@@ -3,6 +3,15 @@ import axios from 'axios';
 import {useParams} from 'react-router-dom';
 
 import Dropzone from "react-dropzone";
+
+import image1 from '../Image/couple-7590701_1920.jpg';
+import image2 from '../Image/fantasy-4379818_1920.jpg';
+import image3 from '../Image/illumination-5173540_1920.jpg';
+import image4 from '../Image/poster-2690541_1280.png';
+import image5 from '../Image/princess-2449970_1920.jpg';
+import image6 from '../Image/sci-fi-3310140_1920.jpg';
+
+
 function FileUpload(props)
 {
     const [Images, setImages] = useState([])
@@ -145,7 +154,7 @@ function RegisterText(props){
             console.log(error);
         }
     });
-        //window.location.href="/text/:text";
+        window.location.href="/text/1";
     }
     
    
@@ -164,7 +173,7 @@ function RegisterText(props){
         formData.append("tags",tag);
         formData.append("content",content);
         formData.append("quizs",quizs);
-       
+        
 
         axios({
             method: "get",
@@ -206,64 +215,87 @@ function RegisterText(props){
         <div>
             <table>
                 <td><FileUpload refreshFunction={updateImage} /></td>
+                <td>&nbsp;</td>
                 <td>
-                    <label>작품 감상 확인용 질문</label><input type="text" onChange={updateQuestion} placeholder="5화 분량을 읽고 알 수 있는 내용의 질문을 입력하세요. ex) 주인공의 이름? " />
+                    <label>작품 감상 확인용 질문 &nbsp;</label><input style={{width: "557px", height: "33px"}} type="text" onChange={updateQuestion} placeholder="5화 분량을 읽고 알 수 있는 내용의 질문을 입력하세요. ex) 주인공의 이름? " />
                     <br/>
-                    <label>정답</label><input type="text" onChange={updateAnswer} />
+                    <label>정답 &nbsp;</label><input type="text" onChange={updateAnswer} />
                     <br/>
-                    <label>오답</label><input type="text" onChange={updateWrong1} />
+                    <label>오답 &nbsp;</label><input type="text" onChange={updateWrong1} />
                     <br/>
-                    <label>오답</label><input type="text" onChange={updateWrong2} />
+                    <label>오답 &nbsp;</label><input type="text" onChange={updateWrong2} />
                 </td>
             </table>
             
         </div>
+        <br />
         <div>
-        <label>제목*</label><input type="text" placeholder="15자이내" onChange={updateTitle} />
+        <label>제목* &nbsp;</label><input style={{width: "240px" , height: "30px"}} type="text" placeholder="15자이내" onChange={updateTitle} />
         </div>
+        <br />
         <div>
-            <select name="장르선택" onChange={updateGenre}>
+            <select style={{width:"240px", height:"30px"}} name="장르선택" onChange={updateGenre}>
                 <option value="none" selected disabled hidden>장르선택</option>
                 <option value="로맨스">로맨스</option>
                 <option value="판타지">판타지</option>
+                <option value="로판">로판</option>
             </select>
         </div>
+        <br />
         <div>
         <table>
            <td><label>태그등록*</label><input type="text" placeholder="최소 2개 이상 입력" onChange={updateTag} /></td> 
-           <td><label>태그신청</label><input type="text" placeholder="신규태그를 신청하세요" /></td>
+           <td><label>&nbsp; 태그신청 &nbsp;</label><input type="text" placeholder="신규태그를 신청하세요" /></td>
         </table>
         
         </div>
+        <br />
         <div>
             <table>
-                <td><button>선택태그</button></td>
-                <td><button>선택태그</button></td>
-                <td><button>선택태그</button></td>
-                <td><button>선택태그</button></td>
-                <td><button>선택태그</button></td>
-                <td><button>선택태그</button></td>
+                <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>#멋있는</button></td>
+                <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>#화려한</button></td>
+                <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>#다채로운</button></td>
+                <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>#신비로운</button></td>
+                <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>#몽환적인</button></td>
+                <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>#감동적인</button></td>
             </table>
         </div>
+        <br />
         <div>
-            <label>작품설명</label>
-            <input type ="text" placeholder="500자 이내" onChange={updateContent} />
+            <label>작품설명 &nbsp;</label>
+            <input style={{width: "1170px" , height: "180px"}} type ="text" placeholder="500자 이내" onChange={updateContent} />
         </div>
+        <br />
         <div>
             <label>샘플 이미지</label>
             <table>
-                <td><img alt="샘플이미지1"></img></td>
-                <td><img alt="샘플이미지2"></img></td>
-                <td><img alt="샘플이미지3"></img></td>
-                <td><img alt="샘플이미지4"></img></td>
-                <td><img alt="샘플이미지5"></img></td>
-                <td><img alt="샘플이미지6"></img></td>
+                <td><img style={{width:"164px", height:"246px"}} src={image1} alt="샘플이미지1"></img></td>
+                <td><img style={{width:"164px", height:"246px"}} src={image2} alt="샘플이미지2"></img></td>
+                <td><img style={{width:"164px", height:"246px"}} src={image3} alt="샘플이미지3"></img></td>
+                <td><img style={{width:"164px", height:"246px"}} src={image4} alt="샘플이미지4"></img></td>
+                <td><img style={{width:"164px", height:"246px"}} src={image5} alt="샘플이미지5"></img></td>
+                <td><img style={{width:"164px", height:"246px"}} src={image6} alt="샘플이미지6"></img></td>
             </table>
         </div>
+        <br />
+        <br />
         <div>
-            <button type="primary" onClick={handleSubmit}>저장</button>
-            <button onClick={movetoRegister}>다음</button>
-        </div>
+            <td>
+            <button style={{display: "flex", justifyContent:"center", flexDirection:"row", alignItems:"center", width: "102px", height: "45px", backgroundColor:"#FFFFFF" ,border:"1px solid #AA0140" ,borderRadius:"4px", marginLeft:"828px"}} type="primary" onClick={handleSubmit}>저장</button>
+            </td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>
+            <button style={{display: "flex", justifyContent:"center", flexDirection:"row", alignItems: "center", width: "102px", height:"45px", backgroundColor:"#AA0140", border:"1px solid #AA0140", borderRadius: "4px", color:"#FFFFFF"}}onClick={movetoRegister}>다음</button>
+        
+            </td>
+            
+            </div>    
         </div>
     )
 }

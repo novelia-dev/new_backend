@@ -8,30 +8,12 @@ class Readworkpage3 extends React.Component{
         return(
             <div>
                 <Text />
-                <Square />
             </div>
         )
     }
 }
 
-class Square extends React.Component{
-    constructor(props){
-        super(props);
-    }
-    render(){
-        const style={
-            width:"581px",
-            height:"1081px",
-            'margin-left':'670px',
-            'background-color': "#D9D9D9",
-        };
-        return(
-            <div style = {style}>
 
-            </div>
-        )
-    }
-}
 
 class Text extends React.Component{
     constructor(props)
@@ -113,21 +95,7 @@ class Text extends React.Component{
             'align':"center",
             'background-color':"#FFFFFF",
         }
-        const style6 = {
-            'position':'absolute',
-            'width':"30px",
-            'height':"12px",
-            'top':"220px",
-            'left':"669px",
-            'font-family':'Roboto',
-            'font-style':'Regular',
-            'font-weight':400,
-            'font-size':"10px",
-            'line-height':"100%",
-            'align':"center",
-            'Vertical-align':"center",
-            'text-color':'#000000'
-        }
+        
         const style7 = {
             'position':'absolute',
             'width':"Hug",
@@ -168,9 +136,11 @@ class Text extends React.Component{
             </select>    
                 
             </div> 
-            <div style={style6}>
-                <h6>본문</h6>
-            </div>
+            <table >
+                <tr> 
+                <td><input type="text" placeholder="본문" style= {{position:'absolute',width:"588px",height:"840px",top:"120px",left:"666px"}}></input></td>
+                </tr>
+            </table>
             <div>
                 <button style={style7}>
                     다음화보기

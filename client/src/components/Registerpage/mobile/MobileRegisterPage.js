@@ -1,5 +1,9 @@
 import React from 'react';
 
+function movetoregister(){
+    window.location.href="/mobileregister2";
+}
+
 function MobileRegisterPage(){
     return(
         <div>
@@ -29,7 +33,7 @@ function MobileRegisterPage(){
             </div>
             <div>
                 <button>취소</button>
-                <button>다음</button>
+                <button onClick={movetoregister}>다음</button>
             </div>
         </div>
     )

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import axios from "axios";
-
+import "./Tag.css";
 var state = {
     createdAuthCode:"",
     authCodeCheck: false,
@@ -74,12 +74,16 @@ class Registerpage3 extends React.Component{
     }
 }
 
+
+
 function Text(){
 
     const [nickname, setnickname] = useState("");
     const [email, setemail] = useState("");
     const [selected, setSelected] = useState("");
     const [age, setAge] = useState("");
+    const [route, setRoute] = useState("");
+
     
 
 
@@ -97,6 +101,10 @@ function Text(){
 
     const onAgehandler =(age) => {
         setAge(age.target.value);
+    }
+
+    const onRoutehandler = (route) => {
+        setRoute(route.target.value);
     }
 
     function activeButton(){
@@ -129,14 +137,18 @@ function Text(){
         
         const style={
             'position':'absolute',
-            'margin-top': "-9px",
+            'font-weight': 400,
+            'border-width':"1px",
+            'border-style':"solid",
+            'border-color':"#E5E5E5",
             'margin-left': "669px",
+            'width':"588px"
         }
         const style1={
             'width':"151px",
             'height':"17px",
+            'color':"#666666",
             'font-family': "Roboto",
-            'top':"-20px",
             'font-weight': 400,
             'font-size': "16px",
             'line-height': "19px",
@@ -163,34 +175,117 @@ function Text(){
             'gap':"10px",
             'width':"131px",
             'height':"45px",
-            
             'borderRadius': "4px",
             'font-family': "Roboto",
-            'top':"-20px",
             'font-weight': 400,
             'font-size': "16px",
             'line-height': "18.75px",
-            
-            
             'color': "#FFFFFF",
             'background-color':"#AA0140",
+            'margin-left':"15px",
+            'margin-top':"15px"
             
         }
+        const Button = () => {
+            const arr = [{id: 1 }, {id: 2 }, { id: 3 },{id : 4},{id : 5},{id : 6}];
+            const [pick, setPick] = useState(arr);
+            const [select, setSelect] = useState([]);
+          
+            return pick.map((item) => (
+              <div className="button_container">
+                
+                <button
+                  key={item.id}
+                  onClick={() => {
+                    !select.includes(item.id)
+                      ? setSelect((select) => [...select, item.id])
+                      : setSelect(select.filter((button) => button !== item.id));
+                  }}
+                  className={
+                    select.includes(item.id)
+                      ? "button_table_btn_ns"
+                      : "button_table_btn_s"
+                  }
+                  style={{width:"76px",height:"29px"}}
+                >
+                  선택태그
+                </button>
+              </div>
+            ));
+          };
+          const Button1 = () => {
+            const arr = [{id: 1 }, {id: 2 }, { id: 3 },{id : 4},{id : 5},{id : 6}];
+            const [pick1, setPick1] = useState(arr);
+            const [select1, setSelect1] = useState([]);
+          
+            return pick1.map((item) => (
+              <div className="button_container">
+                
+                <button
+                  key={item.id}
+                  onClick={() => {
+                    !select1.includes(item.id)
+                      ? setSelect1((select1) => [...select1, item.id])
+                      : setSelect1(select1.filter((button) => button !== item.id));
+                  }}
+                  className={
+                    select1.includes(item.id)
+                      ? "button_table_btn_ns"
+                      : "button_table_btn_s"
+                  }
+                  style={{width:"76px",height:"29px"}}
+                >
+                  선택태그
+                </button>
+              </div>
+            ));
+          };
+          const Button2 = () => {
+            const arr = [{id: 1 }, {id: 2 }, { id: 3 },{id : 4},{id : 5},{id : 6}];
+            const [pick2, setPick2] = useState(arr);
+            const [select2, setSelect2] = useState([]);
+          
+            return pick2.map((item) => (
+              <div className="button_container">
+                
+                <button
+                  key={item.id}
+                  onClick={() => {
+                    !select2.includes(item.id)
+                      ? setSelect2((select2) => [...select2, item.id])
+                      : setSelect2(select2.filter((button) => button !== item.id));
+                  }}
+                  className={
+                    select2.includes(item.id)
+                      ? "button_table_btn_ns"
+                      : "button_table_btn_s"
+                  }
+                  style={{width:"76px",height:"29px"}}
+                >
+                  선택태그
+                </button>
+              </div>
+            ));
+          };
+
+         
     return(
+       
+    <div style={{'position':"static"}}>
+         
         <div style={style}>
-        
+         &nbsp; &nbsp;회원가입
+         <hr style={{'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}></hr>
         <div style={style1}>
-            닉네임*
+        &nbsp; &nbsp;닉네임*
         </div>
         <div style={style2}>
-            <input type="label"placeholder="플레이스 홀더" onChange={onnicknamehandler}></input>
-
-        </div>
-        <div style={style3} onClick={activeButton}>
-        <botton > 중복확인</botton>
-        </div>
-        <div>
-               <select name="성별" style={{width:"240px",height:"30px"}} onChange={ongenderhandler}>
+        &nbsp; &nbsp;<input type="label"placeholder="플레이스 홀더" onChange={onnicknamehandler}></input>
+                     
+        </div><botton style={style3} onClick={activeButton}>중복확인</botton>
+        
+        <div style={{marginTop:"15px"}}>
+        &nbsp; &nbsp;<select name="성별" style={{width:"240px",height:"30px"}} onChange={ongenderhandler}>
                   <option defaultValue="성별(남/여)" hidden>성별(남/여)*</option>
                   <option value="남">
                     남
@@ -200,8 +295,8 @@ function Text(){
                   </option>
                </select>
             </div>
-            <div>
-                <select name="나이대" style={{width:"240px",height:"30px"}} onChange={onAgehandler}>
+            <div style={{marginTop:"15px"}}>
+        &nbsp; &nbsp;<select name="나이대" style={{width:"240px",height:"30px"}} onChange={onAgehandler}>
                     <option defaultValue="나이대" hidden>나이대*</option>
                     <option value="10대">
                         10대
@@ -217,124 +312,60 @@ function Text(){
                     </option>
                 </select>
         </div>
-        <div>
-                <h5 style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666"}}>이메일*</h5>
+        <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
+        이메일*
+            </div>
+            <div></div>
+            <div>
+            &nbsp; &nbsp;<input type="label" style={{width:"240px",height:"30px",marginTop:"5px"}} placeholder="본인인증용 이메일" onChange={onemailhandler}></input>
             </div>
             <div>
-                <input type="label" style={{width:"240px",height:"30px"}} placeholder="본인인증용 이메일" onChange={onemailhandler}></input>
+           <button style={{marginTop:"15px",marginLeft:"15px"}}>Check</button>
+            </div>
+            <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
+             이메일 확인*
+            </div>
+            <div style={{marginTop:"5px",marginLeft:"15px"}}>
+            <input type="label" style={{width:"240px",height:"30px"}} placeholder="이메일 확인"></input>
             </div>
             <div>
-                <button>Check</button>
+           <button style={{marginTop:"15px",marginLeft:"15px"}}>Check</button>
             </div>
-            <div>
-                <h5 style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666"}}>이메일 확인*</h5>
+            <div style={{marginTop:"15px",marginLeft:"15px"}}>
+            <select name="유입경로" style={{width: "248px", height: "38px"}} onChange={onRoutehandler} >
+                    <option defaulValue="유입경로" hidden>유입경로*</option>    
+                </select> 
             </div>
-            <div>
-                <input type="label" style={{width:"240px",height:"30px"}} placeholder="이메일 확인"></input>
+            <div style={{marginTop:"15px",marginLeft:"15px",fontWeight: "700"}}>
+             선호장르
             </div>
-            <div>
-                <button>Check</button>
+            <div style={{marginTop:"15px",marginLeft:"15px"}}>
+                <Button/>
+                <br></br>
             </div>
-            <div>
-                <h5 style={{width:"59px",height:"19px"}}>선호장르</h5>
+          
+            <div style={{marginTop:"15px",marginLeft:"15px",fontWeight: "700"}}>
+              선호태그
             </div>
-            <div>
-                <table>
-                    <tr>
-                        <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
-                        <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
-                        <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
-                        <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
-                        <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
-                        <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
-                    </tr>
-                </table>
+            <div style={{marginTop:"15px",marginLeft:"15px"}}>
+                <Button1/>
+                <br></br>
             </div>
-            <div>
-                <h5>선호태그</h5>
+            <div style={{marginTop:"15px",marginLeft:"15px",fontWeight: "700"}}>
+                금지태그
             </div>
-            <div>
-                <table>
-                    <tr>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
-                    </tr>
-                    <tr>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
-                    </tr>
-                    <tr>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
-                    </tr>
-                    <tr>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>선호태그</button></td>
-                    </tr>
-                </table>
+            <div style={{marginLeft:"15px",marginTop:"15px"}}>
+                <Button2/>
+                <br></br>
             </div>
-            <div>
-                <h5>금지태그</h5>
-            </div>
-            <div>
-            <table>
-                    <tr>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>금지태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>금지태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>금지태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>금지태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>금지태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>금지태그</button></td>
-                    </tr>
-                    <tr>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>금지태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>금지태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>금지태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>금지태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>금지태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>금지태그</button></td>
-                    </tr>
-                    <tr>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>금지태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>금지태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>금지태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>금지태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>금지태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>금지태그</button></td>
-                    </tr>
-                    <tr>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>금지태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>금지태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>금지태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>금지태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>금지태그</button></td>
-                    <td><button style={{width:"Hug",height:"Hug",borderRadius:"50px",padding:"7px 14px 7px 14px"}}>금지태그</button></td>
-                    </tr>
-                </table>
-            </div>
-        <div>
+            <div style={{marginLeft:"15px",marginTop:"15px"}}>
         <button style={style3} onClick={submitactiveButton}>입력완료</button>
         </div>
-    
+        </div>
         </div>
     )
 }
+
 
 
 
