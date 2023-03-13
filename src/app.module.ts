@@ -23,6 +23,7 @@ import { ProfilesModule } from './modules/models/profiles/profiles.module';
 import { LongReviewsModule } from './modules/models/long-reviews/long-reviews.module';
 import { ShortReviewsModule } from './modules/models/short-reviews/short-reviews.module';
 import { FileModule } from './modules/functions/file/file.module';
+import { Coupon } from './modules/models/coupons/entities/coupon.entity';
 
 @Module({
   imports: [
@@ -36,7 +37,7 @@ import { FileModule } from './modules/functions/file/file.module';
       username: process.env.MYSQL_USERNAME,
       password: process.env.MYSQL_PASSWORD,
       database: process.env.MYSQL_DBNAME,
-      entities: [Genre, Novel, Quiz, Tag, User, Profile],
+      entities: [Genre, Novel, Quiz, Tag, User, Profile, Coupon],
       synchronize: true,
     }),
     NovelsModule,
