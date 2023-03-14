@@ -1,7 +1,16 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
-export class CreateShortReviewDto {
+export class CreateInServiceDto {
+  @ApiProperty({
+    name: '유저 id 값',
+    example: 5,
+    required: true,
+  })
+  @IsNotEmpty()
+  @IsNumber()
+  user_id: number;
+
   @ApiProperty({
     name: '소설 id 값',
     example: 5,

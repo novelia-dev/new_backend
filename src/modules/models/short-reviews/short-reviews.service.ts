@@ -1,15 +1,23 @@
 import { Injectable } from '@nestjs/common';
 import { CreateShortReviewDto } from './dto/create-short-review.dto';
 import { UpdateShortReviewDto } from './dto/update-short-review.dto';
+import { CreateInServiceDto } from './dto/create-in-service.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { ShortReview } from './entities/short-review.entity';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class ShortReviewsService {
-  create(createShortReviewDto: CreateShortReviewDto) {
-    return 'This action adds a new shortReview';
+  constructor(
+    @InjectRepository(ShortReview)
+    private shortReviewsReposiroty: Repository<ShortReview>,
+  ) {}
+  async create(data: CreateInServiceDto) {
+    return await this.shortReviewsReposiroty.save(data);
   }
 
-  findAll() {
-    return `This action returns all shortReviews`;
+  async findAll() {
+    return await this.shortReviewsReposiroty.find();
   }
 
   findOne(id: number) {

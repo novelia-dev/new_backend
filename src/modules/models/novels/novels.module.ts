@@ -11,5 +11,6 @@ import { ProfilesModule } from '../profiles/profiles.module';
   imports: [TypeOrmModule.forFeature([Novel, Quiz, Profile]), ProfilesModule],
   controllers: [NovelsController],
   providers: [NovelsService],
+  exports: [NovelsService],
 })
 export class NovelsModule {}

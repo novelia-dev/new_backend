@@ -29,7 +29,7 @@ export class NovelsService {
   }
 
   findOne(id: number) {
-    return this.novelsRepository.find({ where: { id: id } });
+    return this.novelsRepository.findOne({ where: { id: id } });
   }
 
   update(id: number, updateNovelDto: UpdateNovelDto) {

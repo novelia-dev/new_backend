@@ -1,15 +1,24 @@
 import { Injectable } from '@nestjs/common';
 import { CreateLongReviewDto } from './dto/create-long-review.dto';
 import { UpdateLongReviewDto } from './dto/update-long-review.dto';
+import { CreateInServiceDto } from './dto/create-in-service.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { LongReview } from './entities/long-review.entity';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class LongReviewsService {
-  create(createLongReviewDto: CreateLongReviewDto) {
-    return 'This action adds a new longReview';
+  constructor(
+    @InjectRepository(LongReview)
+    private longReviewsReposiroty: Repository<LongReview>,
+  ) {}
+
+  async create(data: CreateInServiceDto) {
+    return await this.longReviewsReposiroty.save(data);
   }
 
-  findAll() {
-    return `This action returns all longReviews`;
+  async findAll() {
+    return await this.longReviewsReposiroty.find();
   }
 
   findOne(id: number) {
