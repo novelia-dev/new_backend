@@ -40,4 +40,7 @@ export default class ShortReview extends BaseEntity {
 
   @Column()
   ans4: string;
+
+  @Column({ default: 'normal' })
+  state: string;
 }

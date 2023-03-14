@@ -53,6 +53,9 @@ export class Profile extends BaseEntity {
   @Column()
   main_role: string;
 
+  @Column({ default: 'normal' })
+  state: string;
+
   //   RELATION COLUMNS
   @OneToOne(() => User, (user) => user.profile)
   account: User;
