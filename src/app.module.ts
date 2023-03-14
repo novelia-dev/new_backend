@@ -24,6 +24,23 @@ import { LongReviewsModule } from './modules/models/long-reviews/long-reviews.mo
 import { ShortReviewsModule } from './modules/models/short-reviews/short-reviews.module';
 import { FileModule } from './modules/functions/file/file.module';
 import { Coupon } from './modules/models/coupons/entities/coupon.entity';
+import { AdminModule } from '@adminjs/nestjs';
+import AdminJS from 'adminjs';
+import * as AdminJSTypeorm from '@adminjs/typeorm';
+import { ShortReview } from './modules/models/short-reviews/entities/short-review.entity';
+import { LongReview } from './modules/models/long-reviews/entities/long-review.entity';
+
+const DEFAULT_ADMIN = {
+  email: 'admin@example.com',
+  password: 'password',
+};
+
+const authenticate = async (email: string, password: string) => {
+  if (email === DEFAULT_ADMIN.email && password === DEFAULT_ADMIN.password) {
+    return Promise.resolve(DEFAULT_ADMIN);
+  }
+  return null;
+};
 
 @Module({
   imports: [
@@ -37,7 +54,17 @@ import { Coupon } from './modules/models/coupons/entities/coupon.entity';
       username: process.env.MYSQL_USERNAME,
       password: process.env.MYSQL_PASSWORD,
       database: process.env.MYSQL_DBNAME,
-      entities: [Genre, Novel, Quiz, Tag, User, Profile, Coupon],
+      entities: [
+        Genre,
+        Novel,
+        Quiz,
+        Tag,
+        User,
+        Profile,
+        Coupon,
+        ShortReview,
+        LongReview,
+      ],
       synchronize: true,
     }),
     NovelsModule,
@@ -50,6 +77,34 @@ import { Coupon } from './modules/models/coupons/entities/coupon.entity';
     ShortReviewsModule,
     AuthModule,
     FileModule,
+    AdminModule.createAdminAsync({
+      useFactory: () => ({
+        adminJsOptions: {
+          rootPath: '/admin',
+          resources: [
+            Genre,
+            Novel,
+            Quiz,
+            Tag,
+            User,
+            Profile,
+            Coupon,
+            ShortReview,
+            LongReview,
+          ],
+        },
+        auth: {
+          authenticate,
+          cookieName: 'adminjs',
+          cookiePassword: 'secret',
+        },
+        sessionOptions: {
+          resave: true,
+          saveUninitialized: true,
+          secret: 'secret',
+        },
+      }),
+    }),
   ],
   controllers: [AppController],
   providers: [AppService],
@@ -60,3 +115,7 @@ export class AppModule implements NestModule {
     consumer.apply(LoggerMiddleware).forRoutes('*');
   }
 }
+AdminJS.registerAdapter({
+  Resource: AdminJSTypeorm.Resource,
+  Database: AdminJSTypeorm.Database,
+});
