@@ -11,7 +11,7 @@ import {
 import { ShortReviewsService } from './short-reviews.service';
 import { CreateShortReviewDto } from './dto/create-short-review.dto';
 import { UpdateShortReviewDto } from './dto/update-short-review.dto';
-import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { JwtAuthGuard } from 'src/modules/functions/auth/jwt/jwt.guard';
 import { User } from '../users/entities/user.entity';
 import { CurrentUser } from 'src/commons/common/decorators/user.decorator';
@@ -24,6 +24,7 @@ export class ShortReviewsController {
   @ApiOperation({
     summary: '객관식 리뷰 등록하기',
   })
+  @ApiBearerAuth()
   @UseGuards(JwtAuthGuard)
   @Post('new')
   create(

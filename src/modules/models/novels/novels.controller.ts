@@ -12,7 +12,12 @@ import {
 import { NovelsService } from './novels.service';
 import { CreateNovelDto } from './dto/create-novel.dto';
 import { UpdateNovelDto } from './dto/update-novel.dto';
-import { ApiCreatedResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
+import {
+  ApiBearerAuth,
+  ApiCreatedResponse,
+  ApiOperation,
+  ApiTags,
+} from '@nestjs/swagger';
 import { JwtAuthGuard } from 'src/modules/functions/auth/jwt/jwt.guard';
 
 import { CurrentUser } from 'src/commons/common/decorators/user.decorator';
@@ -29,6 +34,7 @@ export class NovelsController {
     summary: 'novel 생성(최신)',
     description: 'novel 생성하기 api',
   })
+  @ApiBearerAuth()
   @UseGuards(JwtAuthGuard)
   @Post('new')
   createNewNovel(
@@ -50,6 +56,7 @@ export class NovelsController {
     description: 'novel 생성하기',
     type: CreateNovelDto,
   })
+  @ApiBearerAuth()
   @UseGuards(JwtAuthGuard)
   @Post()
   create(@CurrentUser() user: User, @Body() titleContentDto: TitleContentDto) {

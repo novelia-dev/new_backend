@@ -11,7 +11,7 @@ import {
 import { LongReviewsService } from './long-reviews.service';
 import { CreateLongReviewDto } from './dto/create-long-review.dto';
 import { UpdateLongReviewDto } from './dto/update-long-review.dto';
-import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { JwtAuthGuard } from 'src/modules/functions/auth/jwt/jwt.guard';
 import { CurrentUser } from 'src/commons/common/decorators/user.decorator';
 import { User } from '../users/entities/user.entity';
@@ -24,6 +24,7 @@ export class LongReviewsController {
   @ApiOperation({
     summary: '주관식 리뷰 하기',
   })
+  @ApiBearerAuth()
   @UseGuards(JwtAuthGuard)
   @Post()
   create(
