@@ -29,6 +29,7 @@ import AdminJS from 'adminjs';
 import * as AdminJSTypeorm from '@adminjs/typeorm';
 import { ShortReview } from './modules/models/short-reviews/entities/short-review.entity';
 import { LongReview } from './modules/models/long-reviews/entities/long-review.entity';
+import { Page } from './modules/models/pages/entities/page.entity';
 
 const DEFAULT_ADMIN = {
   email: 'admin@example.com',
@@ -64,6 +65,7 @@ const authenticate = async (email: string, password: string) => {
         Coupon,
         ShortReview,
         LongReview,
+        Page,
       ],
       synchronize: true,
     }),
@@ -91,6 +93,7 @@ const authenticate = async (email: string, password: string) => {
             Coupon,
             ShortReview,
             LongReview,
+            Page,
           ],
         },
         auth: {

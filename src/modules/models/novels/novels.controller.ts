@@ -18,11 +18,29 @@ import { JwtAuthGuard } from 'src/modules/functions/auth/jwt/jwt.guard';
 import { CurrentUser } from 'src/commons/common/decorators/user.decorator';
 import { TitleContentDto } from './dto/title-content.dto';
 import { User } from '../users/entities/user.entity';
+import { CreateNovelBodyDataDto } from './dto/crate-novel-body-data.dto';
 
 @ApiTags('novels')
 @Controller('novels')
 export class NovelsController {
   constructor(private readonly novelsService: NovelsService) {}
+
+  @ApiOperation({
+    summary: 'novel 생성(최신)',
+    description: 'novel 생성하기 api',
+  })
+  @UseGuards(JwtAuthGuard)
+  @Post('new')
+  createNewNovel(
+    @CurrentUser() user: User,
+    @Body() createNovelBodyData: CreateNovelBodyDataDto,
+  ) {
+    const data = {
+      ...createNovelBodyData,
+      author: user.profile.name,
+    };
+    return this.novelsService.newCreate(data, user.email);
+  }
 
   @ApiOperation({
     summary: 'novel 생성',

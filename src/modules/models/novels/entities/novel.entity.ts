@@ -13,6 +13,7 @@ import {
 import { Quiz } from '../../quizs/entities/quiz.entity';
 import { Tag } from '../../tags/entities/tag.entity';
 import { Profile } from '../../profiles/entities/profile.entity';
+import { Page } from '../../pages/entities/page.entity';
 
 @Entity()
 export class Novel extends BaseEntity {
@@ -63,4 +64,7 @@ export class Novel extends BaseEntity {
 
   @ManyToOne(() => Profile, (profile) => profile.scraps)
   scrappedUsers: Profile[];
+
+  @OneToMany(() => Page, (page) => page.novel, { eager: true })
+  pages: Page[];
 }
