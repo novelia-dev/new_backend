@@ -44,6 +44,12 @@ export class Novel extends BaseEntity {
   @Column({ default: 0 })
   multiple_done: number;
 
+  @Column({
+    default:
+      'https://images.unsplash.com/photo-1615928081877-3885aba162ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80',
+  })
+  thumbnail: string;
+
   @CreateDateColumn({ type: 'timestamp' })
   createdAt!: Date;
 

@@ -1,3 +1,4 @@
+import { FileService } from './../../functions/file/file.service';
 import { IsEmail } from 'class-validator';
 import { Injectable } from '@nestjs/common';
 import { CreateNovelDto } from './dto/create-novel.dto';
@@ -15,7 +16,9 @@ export class NovelsService {
     @InjectRepository(Novel) private novelsRepository: Repository<Novel>,
     @InjectRepository(Profile) private profilesRepository: Repository<Profile>,
     private readonly profilesService: ProfilesService,
+    private readonly fileService: FileService,
   ) {}
+
   async create(createNovelDto: CreateNovelDto, email: string): Promise<any> {
     const newNovel = await this.novelsRepository.create(createNovelDto);
     const authorProfile = await this.profilesService.getByEmail(email);
@@ -26,6 +29,10 @@ export class NovelsService {
   }
 
   async newCreate(data: CreateNovelFullDataDto, email: string) {
+    if (data.thumbnail) {
+      const imgUrl = await this.fileService.uploadFile(data.thumbnail);
+      data.thumbnail = imgUrl.filePath;
+    }
     const newNovel = await this.novelsRepository.create(data);
     const authorProfile = await this.profilesService.getByEmail(email);
     newNovel.authorProfile = authorProfile;

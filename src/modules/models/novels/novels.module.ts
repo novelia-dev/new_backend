@@ -7,12 +7,14 @@ import { Quiz } from '../quizs/entities/quiz.entity';
 import { Profile } from '../profiles/entities/profile.entity';
 import { ProfilesModule } from '../profiles/profiles.module';
 import { PagesModule } from '../pages/pages.module';
+import { FileModule } from 'src/modules/functions/file/file.module';
 
 @Module({
   imports: [
     TypeOrmModule.forFeature([Novel, Quiz, Profile]),
     ProfilesModule,
     forwardRef(() => PagesModule),
+    FileModule,
   ],
   controllers: [NovelsController],
   providers: [NovelsService],

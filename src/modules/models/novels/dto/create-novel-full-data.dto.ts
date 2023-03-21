@@ -46,4 +46,11 @@ export class CreateNovelFullDataDto {
   @IsNotEmpty()
   @IsString()
   author: string;
+
+  @ApiProperty({
+    name: '썸네일',
+    example: 'form data로 보낸다.',
+    required: false,
+  })
+  thumbnail;
 }

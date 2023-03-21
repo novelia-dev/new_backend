@@ -30,6 +30,13 @@ export class CreateNovelBodyDataDto {
   @IsString()
   genre: string;
 
+  @ApiProperty({
+    name: '썸네일',
+    example: 'form data로 보낸다.',
+    required: false,
+  })
+  thumbnail;
+
   // @ApiProperty({
   //   name: '태그들',
   //   example: '[신남, 차가움]',
