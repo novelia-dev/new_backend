@@ -3,7 +3,7 @@ import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
 export class CreateLongReviewDto {
   @ApiProperty({
-    name: '소설 id 값',
+    description: '소설 id 값',
     example: 5,
     required: true,
   })
@@ -12,7 +12,7 @@ export class CreateLongReviewDto {
   novel_id: number;
 
   @ApiProperty({
-    name: '별점',
+    description: '별점',
     example: 3.5,
     required: true,
   })
@@ -21,7 +21,7 @@ export class CreateLongReviewDto {
   star: number;
 
   @ApiProperty({
-    name: '좋은점 피드백',
+    description: '좋은점 피드백',
     example: '재밌ㄱ어요!',
     required: true,
   })
@@ -30,7 +30,7 @@ export class CreateLongReviewDto {
   good_content: string;
 
   @ApiProperty({
-    name: '나쁜점 피드백',
+    description: '나쁜점 피드백',
     example: '재미 없어요!',
     required: true,
   })

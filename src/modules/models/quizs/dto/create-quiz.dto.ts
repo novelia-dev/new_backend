@@ -3,7 +3,7 @@ import { IsNotEmpty, IsNumber } from 'class-validator';
 
 export class CreateQuizDto {
   @ApiProperty({
-    name: '소설의 id 값',
+    description: '소설의 id 값',
     example: 3,
     required: true,
   })
@@ -12,7 +12,7 @@ export class CreateQuizDto {
   novelPk: number;
 
   @ApiProperty({
-    name: '확인 질문',
+    description: '확인 질문',
     example: '주인공의 이름은?',
     required: true,
   })
@@ -21,7 +21,7 @@ export class CreateQuizDto {
   question: string;
 
   @ApiProperty({
-    name: '정답',
+    description: '정답',
     example: '김독자',
     required: true,
   })
@@ -30,7 +30,7 @@ export class CreateQuizDto {
   answer: string;
 
   @ApiProperty({
-    name: '오답1',
+    description: '오답1',
     example: '유상혁',
     required: true,
   })
@@ -39,7 +39,7 @@ export class CreateQuizDto {
   wrong1: string;
 
   @ApiProperty({
-    name: '오답2',
+    description: '오답2',
     example: '유정아',
     required: true,
   })

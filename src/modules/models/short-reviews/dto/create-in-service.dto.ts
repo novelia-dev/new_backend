@@ -3,7 +3,7 @@ import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
 export class CreateInServiceDto {
   @ApiProperty({
-    name: '유저 id 값',
+    description: '유저 id 값',
     example: 5,
     required: true,
   })
@@ -12,7 +12,7 @@ export class CreateInServiceDto {
   user_id: number;
 
   @ApiProperty({
-    name: '소설 id 값',
+    description: '소설 id 값',
     example: 5,
     required: true,
   })
@@ -21,7 +21,7 @@ export class CreateInServiceDto {
   novel_id: number;
 
   @ApiProperty({
-    name: '별점',
+    description: '별점',
     example: 4,
     required: true,
   })
@@ -30,7 +30,7 @@ export class CreateInServiceDto {
   star: number;
 
   @ApiProperty({
-    name: '응답1',
+    description: '응답1',
     example: '캐릭터가 매력적',
     required: true,
   })
@@ -39,7 +39,7 @@ export class CreateInServiceDto {
   ans1: string;
 
   @ApiProperty({
-    name: '응답2',
+    description: '응답2',
     example: '스토리가 매력적',
     required: true,
   })
@@ -48,7 +48,7 @@ export class CreateInServiceDto {
   ans2: string;
 
   @ApiProperty({
-    name: '응답3',
+    description: '응답3',
     example: '매력적',
     required: true,
   })
@@ -57,7 +57,7 @@ export class CreateInServiceDto {
   ans3: string;
 
   @ApiProperty({
-    name: '응답4',
+    description: '응답4',
     example: '흡입력이 좋다',
     required: true,
   })
