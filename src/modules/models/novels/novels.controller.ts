@@ -51,6 +51,7 @@ export class NovelsController {
   @ApiOperation({
     summary: 'novel 생성',
     description: 'novel 생성하기 api',
+    deprecated: true,
   })
   @ApiCreatedResponse({
     description: 'novel 생성하기',
