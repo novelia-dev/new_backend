@@ -30,6 +30,8 @@ import * as AdminJSTypeorm from '@adminjs/typeorm';
 import { ShortReview } from './modules/models/short-reviews/entities/short-review.entity';
 import { LongReview } from './modules/models/long-reviews/entities/long-review.entity';
 import { Page } from './modules/models/pages/entities/page.entity';
+import { Announcement } from './modules/models/announcements/entities/announcement.entity';
+import { AnnouncementsModule } from './modules/models/announcements/announcements.module';
 
 const DEFAULT_ADMIN = {
   email: 'admin@example.com',
@@ -66,6 +68,7 @@ const authenticate = async (email: string, password: string) => {
         ShortReview,
         LongReview,
         Page,
+        Announcement,
       ],
       synchronize: true,
     }),
@@ -79,6 +82,7 @@ const authenticate = async (email: string, password: string) => {
     ShortReviewsModule,
     AuthModule,
     FileModule,
+    AnnouncementsModule,
     AdminModule.createAdminAsync({
       useFactory: () => ({
         adminJsOptions: {
@@ -94,6 +98,7 @@ const authenticate = async (email: string, password: string) => {
             ShortReview,
             LongReview,
             Page,
+            Announcement,
           ],
         },
         auth: {
