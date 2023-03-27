@@ -4,7 +4,7 @@ import { IsDate, IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
 export class CreateNovelDto {
   @ApiProperty({
-    name: 'title',
+    description: 'title',
     example: '새로운 로맨스',
     required: true,
   })
@@ -13,7 +13,7 @@ export class CreateNovelDto {
   title: string;
 
   @ApiProperty({
-    name: 'author',
+    description: 'author',
     example: '모이',
     required: true,
   })
@@ -22,7 +22,7 @@ export class CreateNovelDto {
   author: string;
 
   @ApiProperty({
-    name: 'content',
+    description: 'content',
     example: '우리의 사랑은 그때부터 시작이였다..',
     required: true,
   })
@@ -31,7 +31,7 @@ export class CreateNovelDto {
   content: string;
 
   @ApiProperty({
-    name: 'genre',
+    description: 'genre',
     example: '로맨스',
     required: true,
     // type: () => genreTypes,

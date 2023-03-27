@@ -38,6 +38,9 @@ export class Novel extends BaseEntity {
   @Column()
   start_date: Date;
 
+  @Column({ default: false })
+  isBought: boolean;
+
   @Column({ default: 0 })
   short_done: number;
 

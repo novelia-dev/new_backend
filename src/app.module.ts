@@ -32,6 +32,10 @@ import { LongReview } from './modules/models/long-reviews/entities/long-review.e
 import { Page } from './modules/models/pages/entities/page.entity';
 import { Announcement } from './modules/models/announcements/entities/announcement.entity';
 import { AnnouncementsModule } from './modules/models/announcements/announcements.module';
+import { Alarm } from './modules/models/alarms/entities/alarm.entity';
+import { Report } from './modules/models/reports/entities/report.entity';
+import { AlarmsModule } from './modules/models/alarms/alarms.module';
+import { ReportsModule } from './modules/models/reports/reports.module';
 
 const DEFAULT_ADMIN = {
   email: 'admin@example.com',
@@ -69,6 +73,8 @@ const authenticate = async (email: string, password: string) => {
         LongReview,
         Page,
         Announcement,
+        Alarm,
+        Report,
       ],
       synchronize: true,
     }),
@@ -83,6 +89,8 @@ const authenticate = async (email: string, password: string) => {
     AuthModule,
     FileModule,
     AnnouncementsModule,
+    AlarmsModule,
+    ReportsModule,
     AdminModule.createAdminAsync({
       useFactory: () => ({
         adminJsOptions: {
@@ -99,6 +107,8 @@ const authenticate = async (email: string, password: string) => {
             LongReview,
             Page,
             Announcement,
+            Alarm,
+            Report,
           ],
         },
         auth: {
