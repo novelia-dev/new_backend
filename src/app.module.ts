@@ -36,6 +36,8 @@ import { Alarm } from './modules/models/alarms/entities/alarm.entity';
 import { Report } from './modules/models/reports/entities/report.entity';
 import { AlarmsModule } from './modules/models/alarms/alarms.module';
 import { ReportsModule } from './modules/models/reports/reports.module';
+import { Present } from './modules/models/presents/entities/present.entity';
+import { PresentsModule } from './modules/models/presents/presents.module';
 
 const DEFAULT_ADMIN = {
   email: 'admin@example.com',
@@ -75,6 +77,7 @@ const authenticate = async (email: string, password: string) => {
         Announcement,
         Alarm,
         Report,
+        Present,
       ],
       synchronize: true,
     }),
@@ -91,6 +94,7 @@ const authenticate = async (email: string, password: string) => {
     AnnouncementsModule,
     AlarmsModule,
     ReportsModule,
+    PresentsModule,
     AdminModule.createAdminAsync({
       useFactory: () => ({
         adminJsOptions: {
@@ -109,6 +113,7 @@ const authenticate = async (email: string, password: string) => {
             Announcement,
             Alarm,
             Report,
+            Present,
           ],
         },
         auth: {
